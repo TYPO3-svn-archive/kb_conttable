@@ -1,5 +1,6 @@
 2009-11-28  Bernhard Kraft <kraftb@think-open.at>
 
+	* Updated documentation
 	* Initial import into forge SVN
 	* Raised TER state from "alpha" to "stable"
 	* Fixed a small issue with dynamically generated content element wizard in table wizard
