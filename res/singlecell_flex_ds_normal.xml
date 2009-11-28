@@ -1,0 +1,336 @@
+<T3DataStructure>
+	<column_###ROW###_###COLUMN###_colspan>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.colspan</label>
+			<config>
+				<type>input</type>
+				<size>4</size>
+				<max>4</max>
+				<eval>int</eval>
+				<range>
+					<upper>100</upper>
+					<lower>1</lower>
+				</range>
+				<default>1</default>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_colspan>
+	<column_###ROW###_###COLUMN###_rowspan>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.rowspan</label>
+			<config>
+				<type>input</type>
+				<size>4</size>
+				<max>4</max>
+				<eval>int</eval>
+				<range>
+					<upper>100</upper>
+					<lower>1</lower>
+				</range>
+				<default>1</default>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_rowspan>
+	<column_###ROW###_###COLUMN###_celltype>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.celltype</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.celltype.normal</label>
+						<pos index="1">td</pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.celltype.head</label>
+						<pos index="1">th</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_celltype>
+	<column_###ROW###_###COLUMN###_align>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.align</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.align.normal</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.align.left</label>
+						<pos index="1">left</pos>
+					</numIndex>
+					<numIndex index="2">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.align.center</label>
+						<pos index="1">center</pos>
+					</numIndex>
+					<numIndex index="3">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.align.right</label>
+						<pos index="1">right</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_align>
+	<column_###ROW###_###COLUMN###_valign>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.valign</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.valign.normal</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.valign.top</label>
+						<pos index="1">top</pos>
+					</numIndex>
+					<numIndex index="2">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.valign.middle</label>
+						<pos index="1">middle</pos>
+					</numIndex>
+					<numIndex index="3">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.valign.bottom</label>
+						<pos index="1">bottom</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_valign>
+	<column_###ROW###_###COLUMN###_fontweight>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontweight</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontweight.normal</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bold</label>
+						<pos index="1">bold</pos>
+					</numIndex>
+					<numIndex index="2">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bolder</label>
+						<pos index="1">bolder</pos>
+					</numIndex>
+					<numIndex index="3">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontweight.lighter</label>
+						<pos index="1">lighter</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_fontweight>
+	<column_###ROW###_###COLUMN###_fontfamily>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontfamily</label>
+			<config>
+				<type>input</type>
+				<size>30</size>
+				<eval>trim</eval>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_fontfamily>
+	<column_###ROW###_###COLUMN###_cellwidth>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellwidth</label>
+			<config>
+				<type>input</type>
+				<size>6</size>
+				<max>6</max>
+				<eval>int</eval>
+				<range>
+					<upper>999999</upper>
+					<lower>0</lower>
+				</range>
+				<default>0</default>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_cellwidth>
+	<column_###ROW###_###COLUMN###_cellwidth_format>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellwidth_format</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent</label>
+						<pos index="1">%</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_cellwidth_format>
+	<column_###ROW###_###COLUMN###_cellheight>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellheight</label>
+			<config>
+				<type>input</type>
+				<size>6</size>
+				<max>6</max>
+				<eval>int</eval>
+				<range>
+					<upper>999999</upper>
+					<lower>0</lower>
+				</range>
+				<default>0</default>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_cellheight>
+	<column_###ROW###_###COLUMN###_cellheight_format>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellheight_format</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent</label>
+						<pos index="1">%</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_cellheight_format>
+	<column_###ROW###_###COLUMN###_wordwrap>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.wordwrap</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.normal</label>
+						<pos index="1"></pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.nowrap</label>
+						<pos index="1">nowrap</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_wordwrap>
+	<column_###ROW###_###COLUMN###_fontsize>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontsize</label>
+			<config>
+				<type>input</type>
+				<size>4</size>
+				<max>4</max>
+				<eval>int</eval>
+				<range>
+					<upper>9999</upper>
+					<lower>0</lower>
+				</range>
+				<default>0</default>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_fontsize>
+	<column_###ROW###_###COLUMN###_fontsize_format>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format</label>
+			<config>
+				<type>select</type>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<items>
+					<numIndex index="0">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.pixel</label>
+						<pos index="1">px</pos>
+					</numIndex>
+					<numIndex index="1">
+						<label index="0">LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.points</label>
+						<pos index="1">pt</pos>
+					</numIndex>
+				</items>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_fontsize_format>
+	<column_###ROW###_###COLUMN###_class>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.class</label>
+			<config>
+				<type>input</type>
+				<size>15</size>
+				<eval>trim</eval>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_class>
+	<column_###ROW###_###COLUMN###_id>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.id</label>
+			<config>
+				<type>input</type>
+				<size>15</size>
+				<eval>trim</eval>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_id>
+	<column_###ROW###_###COLUMN###_color>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.color</label>
+			<config>
+				<type>input</type>
+				<size>6</size>
+				<eval>trim</eval>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_color>
+	<column_###ROW###_###COLUMN###_backgroundcolor>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.backgroundcolor</label>
+			<config>
+				<type>input</type>
+				<size>6</size>
+				<eval>trim</eval>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_backgroundcolor>
+	<column_###ROW###_###COLUMN###_style>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.style</label>
+			<config>
+				<type>text</type>
+				<cols>30</cols>
+				<rows>5</rows>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_style>
+	<column_###ROW###_###COLUMN###_additional>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.additional</label>
+			<config>
+				<type>text</type>
+				<cols>30</cols>
+				<rows>5</rows>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_additional>
+</T3DataStructure>

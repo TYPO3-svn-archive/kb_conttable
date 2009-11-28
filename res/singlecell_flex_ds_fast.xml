@@ -1,0 +1,23 @@
+<T3DataStructure>
+	<column_###ROW###_###COLUMN###_fastprops>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.fastprops</label>
+			<config>
+				<type>text</type>
+				<cols>30</cols>
+				<rows>5</rows>
+				<wizards>
+					<_PADDING>2</_PADDING>
+					<table_wizard>
+						<title>Table Wizard</title>
+						<type>script</type>
+						<notNewRecords>1</notNewRecords>
+						<icon>EXT:kb_conttable/tt_content_tx_kbconttable_flex_ds/wizard_icon.gif</icon>
+						<script>EXT:kb_conttable/tt_content_tx_kbconttable_flex_ds/index.php</script>
+						<hideParent>1</hideParent>
+					</table_wizard>
+				</wizards>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_fastprops>
+</T3DataStructure>

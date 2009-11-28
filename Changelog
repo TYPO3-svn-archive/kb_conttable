@@ -1,0 +1,73 @@
+2009-11-28  Bernhard Kraft <kraftb@think-open.at>
+
+	* Initial import into forge SVN
+	* Raised TER state from "alpha" to "stable"
+	* Fixed a small issue with dynamically generated content element wizard in table wizard
+	* Updated the extension to work with TYPO3 versions 4.2 and 4.3
+
+2006-02-13  Bernhard Kraft <kraftb@think-open.at>
+
+	* Now works together with kb_pm_paste
+
+2006-01-02  Bernhard Kraft <kraftb@think-open.at>
+
+	* Implemented the Template “Keep” mode. This allows to save a template in such a way that when it get's used only the style definitions get copied to the actual table but not any information about the number of rows and their content: Content stays - Style changes.
+
+2005-11-16  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed 2 bugs with RTE mode
+
+2005-11-03  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed a problem which lead to not working locking.
+	* Completed locking mechanism by adding fields for the last actions which weren't lockable (Hide Cells, Move cells)
+
+2005-10-28  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed a small issue which caused locked fields to not be set/locked properly.
+
+2005-07-29  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed a bug which resulted in not being able to save RTE content. This bug occured only when creating new tables with version 0.2.0 because of the change that the RTE editor is only included when needed.
+
+2005-07-23  Bernhard Kraft <kraftb@think-open.at>
+
+	* Introduced “Fast-Mode” which stores the cell properties in a serialized array. This increases speed but cell properties can't get edited from the T3 record editing screen anymore but rather from the table wizard. Also the RTE fields now only get inserted into the Flexform when RTE Mode is switched on. This also increases speed.
+	* For more information on Fast mode see section “Fast mode” in the documentation.
+
+2005-07-10  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed a bug which caused that the content element couldn't be copied or imported.
+	* Included German translations
+
+2005-06-17  Bernhard Kraft <kraftb@mokka.at>
+
+	* Updated documentation
+
+2005-05-12  Bernhard Kraft <kraftb@mokka.at>
+
+	* Included a workaround for a bug in T3 3.7.0 so now templating should also work in this version if the included patch gets applied.
+
+2005-05-03  Bernhard Kraft <kraftb@mokka.at>
+
+	* Updated manual (now includes screenshots directly - upload limit to TER was raised :)
+	* Added section regarding the “ERROR: NEW4277ac44005ea” error.
+
+2005-05-02  Bernhard Kraft <kraftb@mokka.at>
+
+	* Completely rewritten !!!
+	* Now completely Flexform based.
+	* Configuration via 2D optionSplit
+	* Many other new features: see first documentation paragraph.
+
+2005-01-24  Bernhard Kraft <kraftb@mokka.at>
+
+	* Fixed the irritating red “not saved” message appearing after changing cell properties. Table gets saved automatically now.
+
+2005-??-??  Bernhard Kraft <kraftb@mokka.at>
+
+	* Fixed paths to get fetched from TYPO3. Hardcoded before.
+
+2005-??-??  Bernhard Kraft <kraftb@mokka.at>
+
+	* Initial release

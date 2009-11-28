@@ -1,0 +1,24 @@
+<T3DataStructure>
+	<column_###ROW###_###COLUMN###_rte_content>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.rte_content</label>
+			<config>
+				<type>text</type>
+				<cols>30</cols>
+				<rows>5</rows>
+				<wizards>
+					<_PADDING>2</_PADDING>
+					<RTE>
+						<notNewRecords>1</notNewRecords>
+						<RTEonly>1</RTEonly>
+						<type>script</type>
+						<title>Full screen Rich Text Editing|Formatteret redigering i hele vinduet</title>
+						<icon>wizard_rte2.gif</icon>
+						<script>wizard_rte.php</script>
+					</RTE>
+				</wizards>
+			</config>
+			<defaultExtras>richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_kbconttable/rte/]</defaultExtras>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_rte_content>
+</T3DataStructure>

@@ -1,0 +1,25 @@
+
+  # cat=basic; type=string; label=RTE Configuration: This is the default RTE configuration. It is also configurable on a per Page level via Page TS Config.
+RTEconf = richtext[cut|copy|paste|formatblock|textcolor|bold|italic|underline|left|center|right|orderedlist|unorderedlist|outdent|indent|link|table|image|line|chMode]:rte_transform[mode=ts_css|imgpath=uploads/tx_kbconttable/rte/]
+
+  # cat=basic; type=integer; label=Preview Text Length: The legnth of the Text which is shown in each cell for each content element.
+previewTextLen = 100
+
+  # cat=basic; type=integer; label=Default colPos value: By default kb_conttable stores all Content Elements in Column 10 so they are not visible in the Page module. This is required so they are not rendered because else they would be in the Normal column.
+colPos = 10
+
+  # cat=basic; type=boolean; label=Show content column in Page module: Normaly the default column 10 isn't shown in the Page module but just in the List module. If a user has no access to the List module but just to the Page module he can't access the 10'th column. If this checkbox gets set the 10'th column gets shown.
+showContentCol = 0
+
+  # cat=basic; type=integer; label=New Table Columns: When a new table is created it has a default number of columns. This must be set to a value greater than 0. It can be overwritten by TSConfig
+defaultColumns = 2
+  
+  # cat=basic; type=integer; label=New Table Rows: When a new table is created it has a default number of rows. This must be set to a value greater than 0. It can be overwritten by TSConfig
+defaultRows = 2
+
+  # cat=basic; type=boolean; label=Fast-mode: There are a lot of fields for a single cell. This causes the FlexForms to get very huge which slows down the server. When this checkbox is enabled the fields don't get stored each in it's own Flexform XML field but rather all in one large field containing a serialized array. Modifying cell properties except the RTE Content and the Content Elements fields is impossible through the default record editing screen of T3 but rather done through the table wizard. Already existing tables in normal mode get converted to fast-mode tables when entering the table wizard and also vice-versa if fast-mode is disabled.
+fastMode = 0
+
+  # cat=basic; type=boolean; label=DB mode: when this flag is set, the table data doesn't get stored as flexform XML or a serialized array but rather real tables will get used for all information
+dbMode = 1
+

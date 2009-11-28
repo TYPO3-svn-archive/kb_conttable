@@ -1,0 +1,8 @@
+Preview Text Length configurable via TSConfig (class.tx_kbconttable_layout.php)
+
+When Cut from normal clipboard item doesn't get removed from clipboard
+
+Abprüfen das nicht Commandos ausgeführt werden die durch lock's gesperrt sind.
+
+Make local copy icon und fuctionality
+

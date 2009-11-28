@@ -1,0 +1,15 @@
+<T3DataStructure>
+	<column_###ROW###_###COLUMN###_elements>
+		<TCEforms>
+			<label>LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex.sheet_cell.elements</label>
+			<config>
+				<type>group</type>
+				<internal_type>db</internal_type>
+				<allowed>tt_content</allowed>
+				<size>5</size>
+				<minitems>0</minitems>
+				<maxitems>40</maxitems>
+			</config>
+		</TCEforms>
+	</column_###ROW###_###COLUMN###_elements>
+</T3DataStructure>
