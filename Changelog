@@ -1,5 +1,7 @@
 2009-11-28  Bernhard Kraft <kraftb@think-open.at>
 
+	* Set proper version requirements for TYPO3 and PHP in ext_emconf.php
+	* Raised version to 0.3.0
 	* Updated documentation
 	* Initial import into forge SVN
 	* Raised TER state from "alpha" to "stable"
