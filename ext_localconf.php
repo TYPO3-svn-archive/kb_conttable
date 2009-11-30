@@ -12,7 +12,10 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['colPos'] = $_EXTCONF['colPos']
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['showContentCol'] = $_EXTCONF['showContentCol'] ? 1 : 0;
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['RTEconf'] = trim($_EXTCONF['RTEconf']);
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['fastMode'] = $_EXTCONF['fastMode'] ? true : false;
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['dbMode'] = $_EXTCONF['dbMode'] ? true : false;
+
+// TODO: Database-mode not fully implemented
+// $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['dbMode'] = $_EXTCONF['dbMode'] ? true : false;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['dbMode'] = false;
 
 if ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['showContentCol'])	{
 	t3lib_extMgm::addPageTSConfig('

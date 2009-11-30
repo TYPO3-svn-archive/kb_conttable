@@ -20,6 +20,6 @@ defaultRows = 2
   # cat=basic; type=boolean; label=Fast-mode: There are a lot of fields for a single cell. This causes the FlexForms to get very huge which slows down the server. When this checkbox is enabled the fields don't get stored each in it's own Flexform XML field but rather all in one large field containing a serialized array. Modifying cell properties except the RTE Content and the Content Elements fields is impossible through the default record editing screen of T3 but rather done through the table wizard. Already existing tables in normal mode get converted to fast-mode tables when entering the table wizard and also vice-versa if fast-mode is disabled.
 fastMode = 0
 
-  # cat=basic; type=boolean; label=DB mode: when this flag is set, the table data doesn't get stored as flexform XML or a serialized array but rather real tables will get used for all information
-dbMode = 1
+##  # cat=basic; type=boolean; label=DB mode: when this flag is set, the table data doesn't get stored as flexform XML or a serialized array but rather real tables will get used for all information
+## dbMode = 1
 

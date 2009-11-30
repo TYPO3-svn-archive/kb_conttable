@@ -1,3 +1,7 @@
+2009-11-30  Bernhard Kraft <kraftb@think-open.at>
+
+	* Fixed a bug: Commented out not fully implemented feature "DB mode"
+
 2009-11-28  Bernhard Kraft <kraftb@think-open.at>
 
 	* Set proper version requirements for TYPO3 and PHP in ext_emconf.php
