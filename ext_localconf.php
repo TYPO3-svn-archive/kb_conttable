@@ -23,6 +23,12 @@ mod.SHARED.colPos_list = 1,0,2,3,'.$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTK
 ');
 }
 
+t3lib_extMgm::addPageTSConfig('
+mod.wizards.newContentElement.wizardItems.special {
+		show := addToList(kb_conttable)
+}
+');
+
 // Loading hook-files and configuring hooks
 require_once(t3lib_extMgm::extPath($_EXTKEY).'class.tx_t3lib_befunc.php');
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass'][] = 'tx_t3lib_befunc_getFlexFormDS';

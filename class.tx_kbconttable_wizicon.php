@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Kraft Bernhard (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,7 +26,7 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Kraft Bernhard <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -51,27 +51,20 @@ class tx_kbconttable_wizicon	{
 	 */
 	function proc($wizardItems)	{
 		global $LANG;
-		$cnt = 0;
-
 		$LL = $this->includeLocalLang();
+		$wizardConf = array(
+			'icon' => t3lib_extMgm::extRelPath('kb_conttable').'res/new_el_icon.gif',
+			'title' => $LANG->getLLL('tt_content.CType_pi1', $LL),
+			'description' => $LANG->getLLL('tt_content.CType_pi1.description', $LL),
+			'params' => '&defVals[tt_content][CType]=kb_conttable_pi1',
+			'tt_content_defValues.' => array(
+				'CType' => 'kb_conttable_pi1',
+			),
+		);
 
-		$res = array();
-		foreach ($wizardItems as $key => $item)	{
-			if ($key=='special')	{
-				$res['kb_conttable'] = array(
-					'icon' => t3lib_extMgm::extRelPath('kb_conttable').'res/new_el_icon.gif',
-					'title' => $LANG->getLLL('tt_content.CType_pi1', $LL),
-					'description' => $LANG->getLLL('tt_content.CType_pi1.description', $LL),
-					'params' => '&defVals[tt_content][CType]=kb_conttable_pi1',
-					'tt_content_defValues' => array(
-						'CType' => 'kb_conttable_pi1',
-					),
-				);
-			} 
-			$res[$key] = $item;
-		}
+		$wizardItems['special_kb_conttable'] = $wizardConf;
 
-		return $res;
+		return $wizardItems;
 	}
 
 	/**
