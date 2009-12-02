@@ -1,5 +1,6 @@
 2009-12-02  Bernhard Kraft <kraftb@think-open.at>
 
+	* Updated the manual
 	* Fixed the new content elements wizard
 	* Incorporated the templavoila xml/api handling classes completly into the extension. So the extension does not depend on specific templavoila versions any more.
 
