@@ -41,7 +41,11 @@
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
-class tx_kbconttable_xmlrelhndl extends tx_templavoila_xmlrelhndl	{
+
+
+require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_tv_xmlrelhndl.php');
+
+class tx_kbconttable_xmlrelhndl extends tx_kbconttable_tv_xmlrelhndl {
 //	var $flexField = 'tx_templavoila_flex';
 	var $flexField = 'tx_kbconttable_flex';
 

@@ -52,11 +52,6 @@
  *
  */
 
-if (t3lib_extMgm::isLoaded('templavoila'))	{
-	require_once(t3lib_extMgm::extPath('templavoila').'class.tx_templavoila_xmlrelhndl.php');
-} else	{
-	require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_templavoila_xmlrelhndl.php');
-}
 require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_xmlrelhndl.php');
 
 class ux_t3lib_clipboard extends t3lib_clipboard	{

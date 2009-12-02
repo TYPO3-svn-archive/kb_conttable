@@ -1,3 +1,7 @@
+2009-12-02  Bernhard Kraft <kraftb@think-open.at>
+
+	* Incorporated the templavoila xml/api handling classes completly into the extension. So the extension does not depend on specific templavoila versions any more.
+
 2009-12-01  Bernhard Kraft <kraftb@think-open.at>
 
 	* Removed debug statements

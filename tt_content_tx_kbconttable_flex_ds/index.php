@@ -113,11 +113,6 @@ require_once (t3lib_extMgm::extPath('kb_conttable').'class.ux_t3lib_clipboard.ph
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_funcs.php');
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_layout.php');
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_berenderCE.php');
-if (t3lib_extMgm::isLoaded('templavoila'))	{
-	require_once(t3lib_extMgm::extPath('templavoila').'class.tx_templavoila_xmlrelhndl.php');
-} else	{
-	require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_templavoila_xmlrelhndl.php');
-}
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_xmlrelhndl.php');
 
 if (t3lib_extMgm::isLoaded('rte'))	{
