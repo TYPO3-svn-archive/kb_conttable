@@ -106,9 +106,6 @@ class tx_templavoila_xmlrelhndl {
 
 			// Split reference into parts:
 		$destRefArr = $this->_splitAndValidateReference($destination);
-echo "bla";
-print_r($destRefArr);
-exit();
 
 			// Check that destination table is acceptable:
 		if (t3lib_div::inList($this->rootTable.',tt_content',$destRefArr[0])) {
