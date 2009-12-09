@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Database and other labels for kb_conttable extension</description>
+        <type>database</type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="page">Page</label>
+            <label index="content_column">Table Content</label>
+            <label index="tt_content.tx_kbconttable_flex_ds">Table Wizard</label>
+            <label index="tx_kbconttable_tmpl">KB Content Table Template</label>
+            <label index="tx_kbconttable_tmpl.name">Name</label>
+            <label index="tx_kbconttable_tmpl.tsconfig_name">TSConfig Name</label>
+            <label index="tx_kbconttable_tmpl.allowed_users">Allowed BE Users</label>
+            <label index="tx_kbconttable_tmpl.allowed_groups">Allowed BE Groups</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.0">Empty</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.1">Copy Content</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.2">Reference Content</label>
+            <label index="tx_kbconttable_tmpl.content_mode">Content Mode</label>
+            <label index="tt_content.CType_pi1">Content Table</label>
+            <label index="tt_content.CType_pi1.description">Allows you to insert an advanced table where you can configure almost every aspect of the table if your administrator allowed you to do so.</label>
+            <label index="tt_content.tx_kbconttable_flex">Table Contents</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general">Table Setting</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.rte_mode">RTE Mode</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellspacing">Cellspacing</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellpadding">Cellpadding</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.border">Border</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width">Width</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width_format">Width format</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height">Height</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height_format">Height format</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.pixel">Pixel</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.percent">Percent</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align">Align</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.left">Left</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.center">Center</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.right">Right</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.style">Style</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.class">Class</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.id">Id</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.additional">Additional Attributes</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template">Template</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select">Select Template</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select.none">None</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate">New Template</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.name">Name</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.tsconfig_name">TSConfig Name</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite">Overwrite Existing</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite.none">None</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder">Storage Folder</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder.no_storage_folder">No Storage Folder !</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_users">Allowed BE Users</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_groups">Allowed BE Groups</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode">Content Mode</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.empty">Empty</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.copy">Copy Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.ref">Reference Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.keep">Keep Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking">Table Locking</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.rows">Rows</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.columns">Columns</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking">Cell Locking</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.props">Properties</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.content">Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking">Action Locking</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_left">Move column left</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_right">Move column right</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_up">Move row up</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_down">Move row down</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_column">Hide Column</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_row">Hide Row</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_column">Delete Column</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_row">Delete Row</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_before">Insert column before</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_after">Insert column after</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_before">Insert row before</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_after">Insert row after</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_cell">Hide cell</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_left_cell">Move cell left</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_up_cell">Move cell up</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_right_cell">Move cell right</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_down_cell">Move cell down</label>
+            <label index="tt_content.tx_kbconttable_flex.locking.none">None</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.elements">Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rte_content">RTE Content</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fastprops">Properties (Fast-mode)</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.colspan">Colspan</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rowspan">Rowspan</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype">Celltype</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.head">Head</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align">Horizontal Align</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.left">Left</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.center">Center</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.right">Right</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign">Vertical Align</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.top">Top</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.middle">Middle</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.bottom">Bottom</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight">Fontweight</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bold">Bold</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bolder">Bolder</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.lighter">Lighter</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontfamily">Fontfamily</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth">Cellwidth</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth_format">Cellwidth Format</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight">Cellheight</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight_format">Cellheight Format</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel">Pixel</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent">Percent</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap">Wordwrap</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.nowrap">No-wrap</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize">Fontsize</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format">Fontsize Format</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.pixel">Px</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.points">Pt</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.class">Class</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.id">Id</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.color">Text Color</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.backgroundcolor">Background Color</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.style">Style</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.additional">Additional</label>
+            <label index="clipboard.ref_short">Ref</label>
+            <label index="makeLocal">Create local copy</label>
+            <label index="makeLocalMsg">Do you want to create a local copy of this referenced element?</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="page">Seite</label>
+            <label index="content_column">Tabellen Inhalt</label>
+            <label index="tt_content.tx_kbconttable_flex_ds">Tabellen Wizard</label>
+            <label index="tx_kbconttable_tmpl">KB Content Table Template</label>
+            <label index="tx_kbconttable_tmpl.name">Name</label>
+            <label index="tx_kbconttable_tmpl.tsconfig_name">TSConfig Name</label>
+            <label index="tx_kbconttable_tmpl.allowed_users">Erlaubte BE Benutzer</label>
+            <label index="tx_kbconttable_tmpl.allowed_groups">Erlaubte BE Benutzergruppen</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.0">Leer</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.1">Inhalt kopieren</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.2">Inhalt referenzieren</label>
+            <label index="tx_kbconttable_tmpl.content_mode">Inhalts Modus</label>
+            <label index="tt_content.CType_pi1">Content Table</label>
+            <label index="tt_content.CType_pi1.description">Erlaubt ihnen eine erweiterte Tabelle einzufügen in deren Zellen sie Content Elemente oder RTE Inhalt einpflegen können.
+				Eine feingranulierte Konfiguration ermöglicht es ihnen fast alle Aspekte der Tabelle einzustellen wenn ihnen ihr Adminstrator die benötigten Rechte gegeben hat.</label>
+            <label index="tt_content.tx_kbconttable_flex">Tabellen Inhalte</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general">Tabellen Einstellungen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.rte_mode">RTE Modus</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellspacing">Cellspacing</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellpadding">Cellpadding</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.border">Rand</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width">Breite</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width_format">Breitenformat</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height">Höhe</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height_format">Höhenformat</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.pixel">Pixel</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.percent">Prozent</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align">Ausrichtung</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.left">Links</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.center">Zentriert</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.right">Rechts</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.style">Style</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.class">Class</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.id">Id</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.additional">Zusätzliche Attribute</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template">Vorlage</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select">Vorlage auswählen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select.none">None</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate">Neue Vorlage</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.name">Name</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.tsconfig_name">TSConfig Name</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite">Überschreibe existierendes</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite.none">Keines</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder">Ablage Folder</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder.no_storage_folder">Kein Ablage Folder !</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_users">Erlaubte BE Benutzer</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_groups">Erlaubte BE Benutzergruppen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode">Inhalts Modus</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.empty">Empty</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.copy">Inhalt kopieren</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.ref">Inhalt referenzieren</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking">Tabelle sperren</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.rows">Zeilen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.columns">Spalten</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking">Zellen sperren</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.props">Eigenschaften</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.content">Inhalt</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking">Aktionen sperren</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_left">Spalte nach links</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_right">Spalte nach rechts</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_up">Zeile rauf</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_down">Zeile runter</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_column">Verstecke Spalte</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_row">Verstecke Zeile</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_column">Lösche Spalte</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_row">Lösche Zeile</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_before">Spalte davor einfügen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_after">Spalte danach einfügen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_before">Zeile davor einfügen</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_after">Zeile danach einfügen</label>
+            <label index="tt_content.tx_kbconttable_flex.locking.none">Kein</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.elements">Inhalt</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rte_content">RTE Inhalt</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fastprops">Eigenschaften (Fast-mode)</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.colspan">Colspan</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rowspan">Rowspan</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype">Zelltyp</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.head">Kopfzelle</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align">Horizontale Ausrichtung</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.left">Links</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.center">Zentriert</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.right">Rechts</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign">Vertikale Ausrichtung</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.top">Oben</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.middle">Mitte</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.bottom">Unten</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight">Schriftstärke</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bold">Fett</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bolder">Fetter</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.lighter">Leichter</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontfamily">Schriftart</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth">Zellenbreite</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth_format">Zellbreitenformat</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight">Zellhöhe</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight_format">Zellhöhenformat</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel">Pixel</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent">Prozent</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap">Wrapping</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.normal">Normal</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.nowrap">Kein-wrapping</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize">Schriftgrösse</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format">Schriftgrössenformat</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.pixel">Px</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.points">Pt</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.class">Class</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.id">Id</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.color">Textfarbe</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.backgroundcolor">Hintergrundfarbe</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.style">Style</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.additional">Zusätzlich</label>
+            <label index="clipboard.ref_short">Ref</label>
+            <label index="makeLocal">Erzeuge lokale Kopie</label>
+            <label index="makeLocalMsg">Wollen Sie eine lokale Kopie des referenzierten Elements erzeugen?</label>
+        </languageKey>
+    </data>
+    <orig_hash type="array">
+        <languageKey index="default" type="array">
+            <label index="page" type="integer">26464201</label>
+            <label index="content_column" type="integer">30603563</label>
+            <label index="tt_content.tx_kbconttable_flex_ds" type="integer">216406281</label>
+            <label index="tx_kbconttable_tmpl" type="integer">157253735</label>
+            <label index="tx_kbconttable_tmpl.name" type="integer">77521672</label>
+            <label index="tx_kbconttable_tmpl.tsconfig_name" type="integer">197525252</label>
+            <label index="tx_kbconttable_tmpl.allowed_users" type="integer">21782599</label>
+            <label index="tx_kbconttable_tmpl.allowed_groups" type="integer">211415714</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.0" type="integer">216189102</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.1" type="integer">5461504</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.2" type="integer">182014294</label>
+            <label index="tx_kbconttable_tmpl.content_mode" type="integer">36118741</label>
+            <label index="tt_content.CType_pi1" type="integer">246920228</label>
+            <label index="tt_content.CType_pi1.description" type="integer">252049200</label>
+            <label index="tt_content.tx_kbconttable_flex" type="integer">212477996</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general" type="integer">246875603</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.rte_mode" type="integer">212540504</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellspacing" type="integer">178759528</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellpadding" type="integer">110106150</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.border" type="integer">7361862</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width" type="integer">53040229</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width_format" type="integer">249450660</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height" type="integer">250375243</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height_format" type="integer">66070974</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.pixel" type="integer">8921779</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.percent" type="integer">182103780</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align" type="integer">219347913</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.left" type="integer">155571682</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.center" type="integer">82966017</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.right" type="integer">153815495</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.style" type="integer">182617337</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.class" type="integer">163414322</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.id" type="integer">76589678</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.additional" type="integer">77767756</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template" type="integer">41469073</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select" type="integer">52146934</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate" type="integer">1872214</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.name" type="integer">77521672</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.tsconfig_name" type="integer">197525252</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite" type="integer">159999113</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder" type="integer">121890244</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder.no_storage_folder" type="integer">217248369</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_users" type="integer">21782599</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_groups" type="integer">211415714</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode" type="integer">36118741</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.empty" type="integer">216189102</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.copy" type="integer">5461504</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.ref" type="integer">182014294</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.keep" type="integer">188052044</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking" type="integer">73649968</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.rows" type="integer">87094408</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.columns" type="integer">23640109</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking" type="integer">4634361</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.props" type="integer">167521576</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.content" type="integer">253084106</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking" type="integer">60665894</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_left" type="integer">185370552</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_right" type="integer">15203544</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_up" type="integer">57217488</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_down" type="integer">266952208</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_column" type="integer">91096580</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_row" type="integer">161951489</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_column" type="integer">4868990</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_row" type="integer">121169966</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_before" type="integer">216427802</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_after" type="integer">229576642</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_before" type="integer">118938039</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_after" type="integer">172129756</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_cell" type="integer">122828095</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_left_cell" type="integer">212273384</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_up_cell" type="integer">264824957</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_right_cell" type="integer">53973548</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_down_cell" type="integer">211045389</label>
+            <label index="tt_content.tx_kbconttable_flex.locking.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.elements" type="integer">253084106</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rte_content" type="integer">104439181</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fastprops" type="integer">28350428</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.colspan" type="integer">161729898</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rowspan" type="integer">147153743</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype" type="integer">230963201</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.head" type="integer">159981843</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align" type="integer">215826797</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.left" type="integer">155571682</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.center" type="integer">82966017</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.right" type="integer">153815495</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign" type="integer">110276370</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.top" type="integer">173014479</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.middle" type="integer">186426191</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.bottom" type="integer">44932451</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight" type="integer">99820977</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bold" type="integer">18137861</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bolder" type="integer">108601452</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.lighter" type="integer">94290530</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontfamily" type="integer">103196633</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth" type="integer">201344919</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth_format" type="integer">141441260</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight" type="integer">149451157</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight_format" type="integer">129302086</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel" type="integer">8921779</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent" type="integer">182103780</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap" type="integer">156289832</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.nowrap" type="integer">132103616</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize" type="integer">67844006</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format" type="integer">113114772</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.pixel" type="integer">226372767</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.points" type="integer">161082842</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.class" type="integer">163414322</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.id" type="integer">76589678</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.color" type="integer">143669345</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.backgroundcolor" type="integer">123630626</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.style" type="integer">182617337</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.additional" type="integer">41653386</label>
+            <label index="clipboard.ref_short" type="integer">101427931</label>
+            <label index="makeLocal" type="integer">126296530</label>
+            <label index="makeLocalMsg" type="integer">47258179</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="page" type="integer">26464201</label>
+            <label index="content_column" type="integer">30603563</label>
+            <label index="tt_content.tx_kbconttable_flex_ds" type="integer">216406281</label>
+            <label index="tx_kbconttable_tmpl" type="integer">157253735</label>
+            <label index="tx_kbconttable_tmpl.name" type="integer">77521672</label>
+            <label index="tx_kbconttable_tmpl.tsconfig_name" type="integer">197525252</label>
+            <label index="tx_kbconttable_tmpl.allowed_users" type="integer">21782599</label>
+            <label index="tx_kbconttable_tmpl.allowed_groups" type="integer">211415714</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.0" type="integer">216189102</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.1" type="integer">5461504</label>
+            <label index="tx_kbconttable_tmpl.content_mode.I.2" type="integer">182014294</label>
+            <label index="tx_kbconttable_tmpl.content_mode" type="integer">36118741</label>
+            <label index="tt_content.CType_pi1" type="integer">246920228</label>
+            <label index="tt_content.CType_pi1.description" type="integer">252049200</label>
+            <label index="tt_content.tx_kbconttable_flex" type="integer">212477996</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general" type="integer">246875603</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.rte_mode" type="integer">212540504</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellspacing" type="integer">178759528</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.cellpadding" type="integer">110106150</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.border" type="integer">7361862</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width" type="integer">53040229</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.width_format" type="integer">249450660</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height" type="integer">250375243</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.height_format" type="integer">66070974</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.pixel" type="integer">8921779</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.dim_format.percent" type="integer">182103780</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align" type="integer">219347913</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.left" type="integer">155571682</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.center" type="integer">82966017</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.align.right" type="integer">153815495</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.style" type="integer">182617337</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.class" type="integer">163414322</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.id" type="integer">76589678</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_general.additional" type="integer">77767756</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template" type="integer">41469073</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select" type="integer">52146934</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_template.select.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate" type="integer">1872214</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.name" type="integer">77521672</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.tsconfig_name" type="integer">197525252</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite" type="integer">159999113</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.overwrite.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder" type="integer">121890244</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.storage_folder.no_storage_folder" type="integer">217248369</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_users" type="integer">21782599</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.allowed_groups" type="integer">211415714</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode" type="integer">36118741</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.empty" type="integer">216189102</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.copy" type="integer">5461504</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_newtemplate.content_mode.ref" type="integer">182014294</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking" type="integer">73649968</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.rows" type="integer">87094408</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_table_locking.columns" type="integer">23640109</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking" type="integer">4634361</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.props" type="integer">167521576</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell_locking.content" type="integer">253084106</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking" type="integer">60665894</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_left" type="integer">185370552</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_column_right" type="integer">15203544</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_up" type="integer">57217488</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.move_row_down" type="integer">266952208</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_column" type="integer">91096580</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.hide_row" type="integer">161951489</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_column" type="integer">4868990</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.delete_row" type="integer">121169966</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_before" type="integer">216427802</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_column_after" type="integer">229576642</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_before" type="integer">118938039</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_action_locking.insert_row_after" type="integer">172129756</label>
+            <label index="tt_content.tx_kbconttable_flex.locking.none" type="integer">112064895</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.elements" type="integer">253084106</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rte_content" type="integer">104439181</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fastprops" type="integer">28350428</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.colspan" type="integer">161729898</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.rowspan" type="integer">147153743</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype" type="integer">230963201</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.celltype.head" type="integer">159981843</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align" type="integer">215826797</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.left" type="integer">155571682</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.center" type="integer">82966017</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.align.right" type="integer">153815495</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign" type="integer">110276370</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.top" type="integer">173014479</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.middle" type="integer">186426191</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.valign.bottom" type="integer">44932451</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight" type="integer">99820977</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bold" type="integer">18137861</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.bolder" type="integer">108601452</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontweight.lighter" type="integer">94290530</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontfamily" type="integer">103196633</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth" type="integer">201344919</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellwidth_format" type="integer">141441260</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight" type="integer">149451157</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellheight_format" type="integer">129302086</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.pixel" type="integer">8921779</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.cellsize_format.percent" type="integer">182103780</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap" type="integer">156289832</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.normal" type="integer">157332556</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.wordwrap.nowrap" type="integer">132103616</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize" type="integer">67844006</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format" type="integer">113114772</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.pixel" type="integer">226372767</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.fontsize_format.points" type="integer">161082842</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.class" type="integer">163414322</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.id" type="integer">76589678</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.color" type="integer">143669345</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.backgroundcolor" type="integer">123630626</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.style" type="integer">182617337</label>
+            <label index="tt_content.tx_kbconttable_flex.sheet_cell.additional" type="integer">41653386</label>
+            <label index="clipboard.ref_short" type="integer">101427931</label>
+            <label index="makeLocal" type="integer">126296530</label>
+            <label index="makeLocalMsg" type="integer">47258179</label>
+        </languageKey>
+    </orig_hash>
+    <orig_text type="array">
+        <languageKey index="default" type="array">
+        </languageKey>
+        <languageKey index="de" type="array">
+        </languageKey>
+    </orig_text>
+</T3locallang>

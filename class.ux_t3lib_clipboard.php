@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,33 +26,33 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
  *
  *
- *   62: class ux_t3lib_clipboard extends t3lib_clipboard
- *   69:     function initializeClipboard()
- *  115:     function pasteUrl($table,$uid,$setRedirect=1, $baseArray = Array())
- *  146:     function makePasteCmdArray($ref,$CMD)
- *  222:     function cleanCurrent()
- *  256:     function printClipboard()
- *  357:     function printContentFromTab($pad)
- *  441:     function getSelectedRecord($table='',$uid='')
- *  465:     function elFromTable($matchTable='',$pad='')
- *  502:     function selUrlDB($table,$uid,$copy=0,$deselect=0,$baseArray=array())
- *  521:     function setCmd($cmd)
- *  567:     function currentMode()
- *  578:     function padTitleWrap($str,$pad)
+ *   57: class ux_t3lib_clipboard extends t3lib_clipboard
+ *   64:     function initializeClipboard()
+ *  111:     function pasteUrl($table,$uid,$setRedirect=1, $colPos = 0, $baseArray = Array())
+ *  142:     function makePasteCmdArray($ref,$CMD)
+ *  237:     function cleanCurrent()
+ *  268:     function printClipboard()
+ *  369:     function printContentFromTab($pad)
+ *  450:     function getSelectedRecord($table='',$uid='')
+ *  474:     function elFromTable($matchTable='',$pad='')
+ *  511:     function selUrlDB($table,$uid,$copy=0,$deselect=0,$baseArray=array())
+ *  530:     function setCmd($cmd)
+ *  576:     function currentMode()
+ *  587:     function padTitleWrap($str,$pad)
  *
  * TOTAL FUNCTIONS: 12
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
 
-require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_xmlrelhndl.php');
+require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_tv_xmlrelhndl.php');
 
 class ux_t3lib_clipboard extends t3lib_clipboard	{
 
@@ -84,7 +84,7 @@ class ux_t3lib_clipboard extends t3lib_clipboard	{
 		$this->clipData['current'] = $this->current = isset($this->clipData[$clipData['current']]) ? $clipData['current'] : 'normal';
 		$this->clipData['_setThumb'] = $clipData['_setThumb'];
 
-		$this->xmlhandler = t3lib_div::makeInstance('tx_kbconttable_xmlrelhndl');
+		$this->xmlhandler = t3lib_div::makeInstance('tx_kbconttable_tv_xmlrelhndl');
 		$this->xmlhandler->init($this->altRoot);
 		$this->colPos = isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['colPos'])?intval($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['colPos']):10;
 		$this->xmlhandler->colPos = $this->colPos;
@@ -105,6 +105,7 @@ class ux_t3lib_clipboard extends t3lib_clipboard	{
 	 * @param	mixed		"destination": can be positive or negative indicating how the paste is done (paste into / paste after)
 	 * @param	boolean		If set, then the redirect URL will point back to the current script, but with CB reset.
 	 * @param	array		Set of parameters which should be set in the redirect URL
+	 * @param	[type]		$baseArray: ...
 	 * @return	string
 	 */
 	function pasteUrl($table,$uid,$setRedirect=1, $colPos = 0, $baseArray = Array())	{
@@ -411,7 +412,7 @@ class ux_t3lib_clipboard extends t3lib_clipboard	{
 								<tr>
 									<td class="'.$bgColClass.'">'.$this->linkItemText(t3lib_iconWorks::getIconImage($table,$rec,$this->backPath,'hspace="20" title="'.htmlspecialchars(t3lib_BEfunc::getRecordIconAltText($rec,$table)).'"'),$rec,$table).'</td>
 									<td class="'.$bgColClass.'" nowrap="nowrap" width="95%">&nbsp;'.$this->linkItemText(htmlspecialchars(t3lib_div::fixed_lgd_cs(t3lib_BEfunc::getRecordTitle($table,$rec),$GLOBALS['BE_USER']->uc['titleLen'])),$rec,$table).
-										($pad=='normal'?' <strong>('.($this->clipData['normal']['mode']=='ref'?$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.php:clipboard.ref_short'):($this->clipData['normal']['mode']=='copy'?$this->clLabel('copy','cm'):$this->clLabel('cut','cm'))).')</strong>':'').'&nbsp;</td>
+										($pad=='normal'?' <strong>('.($this->clipData['normal']['mode']=='ref'?$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.xml:clipboard.ref_short'):($this->clipData['normal']['mode']=='copy'?$this->clLabel('copy','cm'):$this->clLabel('cut','cm'))).')</strong>':'').'&nbsp;</td>
 									<td class="'.$bgColClass.'" align="center">'.
 									'<a href="#" onclick="'.htmlspecialchars('top.launchView(\''.$table.'\', \''.intval($uid).'\'); return false;').'"><img'.t3lib_iconWorks::skinImg($this->backPath,'gfx/zoom2.gif','width="12" height="12"').' hspace="2" border="0" title="'.$this->clLabel('info','cm').'" alt="" /></a>'.
 									'<a href="'.htmlspecialchars($this->removeUrl('XML', $old_uid)).'#clip_head"><img'.t3lib_iconWorks::skinImg($this->backPath,'gfx/close_12h.gif','width="11" height="12"').' border="0" title="'.$this->clLabel('removeItem').'" alt="" /></a>'.
@@ -586,7 +587,7 @@ class ux_t3lib_clipboard extends t3lib_clipboard	{
 	function padTitleWrap($str,$pad)	{
 		$el = count($this->elFromTable($this->fileMode?'_FILE':'',$pad));
 		if ($el)	{
-			return '<strong>'.$str.'</strong> ('.($pad=='normal'?($this->clipData['normal']['mode']=='ref'?$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.php:clipboard.ref_short'):($this->clipData['normal']['mode']=='copy'?$this->clLabel('copy','cm'):$this->clLabel('cut','cm'))):htmlspecialchars($el)).')';
+			return '<strong>'.$str.'</strong> ('.($pad=='normal'?($this->clipData['normal']['mode']=='ref'?$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.xml:clipboard.ref_short'):($this->clipData['normal']['mode']=='copy'?$this->clLabel('copy','cm'):$this->clLabel('cut','cm'))):htmlspecialchars($el)).')';
 		} else	{
 			return $GLOBALS['TBE_TEMPLATE']->dfw($str);
 		}

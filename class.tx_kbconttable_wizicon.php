@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Kraft Bernhard (kraftb@think-open.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,18 +26,17 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
  *
  *
- *   44: class tx_kbconttable_wizicon
- *   52:     function proc($wizardItems)
- *   89:     function includeLocalLang()
+ *   43: class tx_kbconttable_wizicon
+ *   51:     function proc($wizardItems)
  *
- * TOTAL FUNCTIONS: 2
+ * TOTAL FUNCTIONS: 1
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
@@ -50,31 +49,19 @@ class tx_kbconttable_wizicon	{
 	 * @return	array		modified wizard items
 	 */
 	function proc($wizardItems)	{
-		global $LANG;
-		$LL = $this->includeLocalLang();
 		$wizardConf = array(
 			'icon' => t3lib_extMgm::extRelPath('kb_conttable').'res/new_el_icon.gif',
-			'title' => $LANG->getLLL('tt_content.CType_pi1', $LL),
-			'description' => $LANG->getLLL('tt_content.CType_pi1.description', $LL),
+			'title' => 'LLL:EXT:kb_conttable/locallang_db.xml:tt_content.CType_pi1',
+			'description' => 'LLL:EXT:kb_conttable/locallang_db.xml:tt_content.CType_pi1.description',
 			'params' => '&defVals[tt_content][CType]=kb_conttable_pi1',
 			'tt_content_defValues.' => array(
 				'CType' => 'kb_conttable_pi1',
 			),
 		);
 
-		$wizardItems['special_kb_conttable'] = $wizardConf;
+		$wizardItems['common_kb_conttable'] = $wizardConf;
 
 		return $wizardItems;
-	}
-
-	/**
-	 * Include locallang file for the tt_guest book extension (containing the description and title for the element)
-	 *
-	 * @return	array		LOCAL_LANG array
-	 */
-	function includeLocalLang()	{
-		include(t3lib_extMgm::extPath('kb_conttable').'locallang_db.php');
-		return $LOCAL_LANG;
 	}
 
 }

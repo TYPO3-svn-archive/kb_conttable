@@ -4,7 +4,7 @@ if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 $tempColumns = Array (
 	'tx_kbconttable_flex_ds' => Array (		
 		'exclude' => 1,		
-		'label' => 'LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex_ds',		
+		'label' => 'LLL:EXT:kb_conttable/locallang_db.xml:tt_content.tx_kbconttable_flex_ds',		
 		'config' => Array (
 			'type' => 'text',
 			'cols' => '30',	
@@ -24,7 +24,7 @@ $tempColumns = Array (
 	),
 	'tx_kbconttable_flex' => Array (
 		'exclude' => 1,
-		'label' => 'LLL:EXT:kb_conttable/locallang_db.php:tt_content.tx_kbconttable_flex',
+		'label' => 'LLL:EXT:kb_conttable/locallang_db.xml:tt_content.tx_kbconttable_flex',
 		'config' => Array (
 			'type' => 'flex',
 			'ds_pointerField' => 'uid',
@@ -39,7 +39,7 @@ t3lib_extMgm::addTCAcolumns('tt_content',$tempColumns,1);
 
 $TCA['tx_kbconttable_tmpl'] = Array (
 	'ctrl' => Array (
-		'title' => 'LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl',		
+		'title' => 'LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl',		
 		'label' => 'name',	
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -64,9 +64,9 @@ if (TYPO3_MODE=='BE')	{
 	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_kbconttable_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'class.tx_kbconttable_wizicon.php';
 }
 
-$TCA['tt_content']['columns']['colPos']['config']['items'][] = array('LLL:EXT:kb_conttable/locallang_db.php:content_column', $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['colPos']);
+$TCA['tt_content']['columns']['colPos']['config']['items'][] = array('LLL:EXT:kb_conttable/locallang_db.xml:content_column', $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['colPos']);
 
 
-t3lib_extMgm::addPlugin(Array('LLL:EXT:kb_conttable/locallang_db.php:tt_content.CType_pi1', $_EXTKEY.'_pi1'),'CType');
+t3lib_extMgm::addPlugin(Array('LLL:EXT:kb_conttable/locallang_db.xml:tt_content.CType_pi1', $_EXTKEY.'_pi1'),'CType');
 
 ?>

@@ -1,3 +1,12 @@
+2009-12-09  Bernhard Kraft <kraftb@think-open.at>
+
+	* Updated all PHP doc references for methods at beginning of files using extdeveval
+	* Updated the copyright date and email address in all files, switche first and lastname of author
+	* Added a link to the table wizard, directly from the Web>Page module using a hook of recent TYPO3 versions
+	* Added support for new RTE in RTE mode: tinymce_rte is now also supported
+	* Fixed an issue with the RTE mode (thanks to Raymond Irwin <r.irwin@netzburg.com> for pointing this out)
+	* Fixed a charset issue concerning XML/ARRAY conversions of DS and FLEX structures (thanks to Markus Dellmann <markus.dellmann@dynamiclines.de> for pointing out this issue and sponsoring the bugfix)
+
 2009-12-02  Bernhard Kraft <kraftb@think-open.at>
 
 	* Updated the manual

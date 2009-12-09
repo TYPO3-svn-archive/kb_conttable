@@ -1,7 +1,37 @@
+/***************************************************************
+*  Copyright notice
+*
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  All rights reserved
+*
+*  This script is part of the TYPO3 project. The TYPO3 project is
+*  free software; you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation; either version 2 of the License, or
+*  (at your option) any later version.
+*
+*  The GNU General Public License can be found at
+*  http://www.gnu.org/copyleft/gpl.html.
+*
+*  This script is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*
+*  This copyright notice MUST APPEAR in all copies of the script!
+***************************************************************/
+/**
+ * Javascript functions required for the kb_conttable wizard
+ *
+ * $Id$
+ *
+ * @author	Bernhard Kraft <kraftb@think-open.at>
+ */
 
 var unsaved_global_content = 0;
 var unsaved_content = 0;
 var rteInitialized = 0;
+
 function set_selectbox(boxname, value) {
 	var cnt = 0;
 	var idx = 0;
@@ -76,6 +106,11 @@ function kb_updateForm(row, col, form, field, value) {
 
 var visible_row = 0;
 var visible_column = 0;
+
+function resetRTE() {
+	alert("bla");
+}
+
 function show_celledit(row, col) {
 	var prefix = "kbconttable[data]["+row+"]["+col+"]";
 	var form = document.editform;
@@ -106,11 +141,10 @@ function show_celledit(row, col) {
 	cellprops.style.display = "block";
 	switch (rteMode)	{
 		case 'rtehtmlarea':
-			if (!rteInitialized)	{
-				try { RTEinit(); rteInitialized = 1 } catch(e) { /*alert('catched 1');*/ };
-			}
-			try { RTEshow(); } catch(e) { /* alert('catched 2');*/ };
-			setTimeout( function() { RTEarea[0]["editor"].setHTML(form[prefix+"[rte_content]"].value); }, 200);
+			RTEarea["rte_content"].editor.getPluginInstance("EditorMode").setHTML(form[prefix+"[rte_content]"].value);
+		break;
+		case 'tinymce_rte':
+			top.tinyMCE.activeEditor.setContent(form[prefix+"[rte_content]"].value);
 		break;
 		case 'default':
 			TBE_RTE_WINDOWS['rte_content'].setHTML(form[prefix+"[rte_content]"].value, 0);
@@ -188,7 +222,11 @@ function save_celledit() {
 	form[prefix+"[style]"].value = form.style_val.value;
 	switch (rteMode)	{
 		case 'rtehtmlarea':
-			form[prefix+"[rte_content]"].value = RTEarea[0]["editor"].getHTML();
+			var localEditor = RTEarea["rte_content"].editor
+			form[prefix+"[rte_content]"].value = localEditor.getPluginInstance("EditorMode").getHTML();
+		break;
+		case 'tinymce_rte':
+			form[prefix+"[rte_content]"].value = top.tinyMCE.activeEditor.getContent();
 		break;
 		case 'default':
 			form[prefix+"[rte_content]"].value = TBE_RTE_WINDOWS['rte_content'].getHTML();

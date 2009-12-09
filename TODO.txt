@@ -1,3 +1,6 @@
+
+Cut'n'paste funktioniert derzeit nicht ...
+
 Preview Text Length configurable via TSConfig (class.tx_kbconttable_layout.php)
 
 When Cut from normal clipboard item doesn't get removed from clipboard

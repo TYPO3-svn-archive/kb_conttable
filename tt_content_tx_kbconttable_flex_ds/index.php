@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,7 +26,7 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -39,53 +39,57 @@
  *  142: class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase
  *
  *              SECTION: INITIALIZE
- *  164:     function initFlexData($xml)
+ *  168:     function initFlexData($xml)
  *
  *              SECTION: WIZARD MODULE
- *  187:     function menuConfig()
- *  205:     function main()
- *  509:     function printContent()
- *  521:     function moduleContent()
+ *  191:     function menuConfig()
+ *  209:     function main()
+ *  540:     function printContent()
+ *  552:     function moduleContent()
  *
  *              SECTION: TABLE MODIFICATION
- *  571:     function checkCellProps()
- *  637:     function checkResetSpans()
- *  657:     function checkRowColumnCellHide()
- *  708:     function checkRowColumnMove()
- *  839:     function checkRowColumnDelete()
- *  928:     function checkRowColumnCreate()
+ *  603:     function checkCellProps()
+ *  676:     function checkResetSpans()
+ *  696:     function checkRowColumnCellHide()
+ *  747:     function checkRowColumnMove()
+ *  878:     function checkRowColumnDelete()
+ *  967:     function checkRowColumnCreate()
  *
  *              SECTION: RENDERING
- * 1012:     function getRTEContent($cell, $row, $col)
- * 1031:     function getTable()
- * 1086:     function getTable_Header()
- * 1128:     function getCellEdit()
- * 1343:     function getHiddenArray($ar, $Glabel)
- * 1358:     function getHiddenForm()
- * 1386:     function getJS()
- * 1390:     function goto_returnurl()
- * 1445:     function error($error, $not_stored = 0)
+ * 1049:     function getRTEContent($cell)
+ * 1068:     function getTable()
+ * 1125:     function getTable_Header()
+ * 1167:     function getCellEdit()
+ * 1382:     function getHiddenArray($ar, $Glabel)
+ * 1397:     function getHiddenForm()
+ * 1425:     function getJS()
+ * 1429:     function goto_returnurl()
+ * 1485:     function error($error, $not_stored = 0, $info = '')
  *
  *              SECTION: CHECKING
- * 1478:     function checkRowColumnCount($validate = 0)
+ * 1526:     function checkRowColumnCount($validate = 0)
  *
  *              SECTION: ITERATION METHODS
- * 1519:     function iter_getTable_rowBegin(&$params)
- * 1558:     function iter_getTable_column(&$params)
- * 1623:     function iter_getTable_rowEnd(&$params)
- * 1634:     function iter_chkRowColCount_rowEnd(&$params)
- * 1651:     function iter_getHiddenForm_column(&$params)
+ * 1567:     function iter_getTable_rowBegin(&$params)
+ * 1606:     function iter_getTable_column(&$params)
+ * 1671:     function iter_getTable_rowEnd(&$params)
+ * 1682:     function iter_chkRowColCount_rowEnd(&$params)
+ * 1699:     function iter_getHiddenForm_column(&$params)
  *
  *              SECTION: CONTENT ELEMENTS OPERATIONS
- * 1725:     function cmd_createNewRecord ($parentRecord, $defVals='')
- * 1745:     function cmd_unlinkRecord ($unlinkRecord)
- * 1756:     function cmd_deleteRecord ($deleteRecord)
- * 1768:     function cmd_makeLocalRecord ($makeLocalRecord)
+ * 1778:     function cmd_createNewRecord ($parentRecord, $defVals='')
+ * 1797:     function cmd_unlinkRecord ($unlinkRecord)
+ * 1808:     function cmd_deleteRecord ($deleteRecord)
+ * 1820:     function cmd_makeLocalRecord ($makeLocalRecord)
+ *
+ *              SECTION: FAST MODE
+ * 1839:     function filter_unneededFlexData($flexData)
+ * 1895:     function filter_unneededFlexDS($flexDS, $flexData)
  *
  *              SECTION: SUPPORTING METHODS
- * 1791:     function array_swap($array, $start1, $length1, $start2, $length2)
+ * 1975:     function array_swap($array, $start1, $length1, $start2, $length2)
  *
- * TOTAL FUNCTIONS: 31
+ * TOTAL FUNCTIONS: 33
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
@@ -101,7 +105,7 @@ unset($MCONF);
 require ('conf.php');
 require ($BACK_PATH.'init.php');
 require ($BACK_PATH.'template.php');
-$LANG->includeLLFile('EXT:kb_conttable/tt_content_tx_kbconttable_flex_ds/locallang.php');
+$LANG->includeLLFile('EXT:kb_conttable/tt_content_tx_kbconttable_flex_ds/locallang.xml');
 require_once (PATH_t3lib.'class.t3lib_scbase.php');
 require_once (PATH_t3lib.'class.t3lib_tcemain.php');
 require_once(PATH_t3lib.'class.t3lib_recordlist.php');
@@ -113,17 +117,18 @@ require_once (t3lib_extMgm::extPath('kb_conttable').'class.ux_t3lib_clipboard.ph
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_funcs.php');
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_layout.php');
 require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_berenderCE.php');
-require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_xmlrelhndl.php');
+require_once (t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_tv_xmlrelhndl.php');
 
 if (t3lib_extMgm::isLoaded('rte'))	{
 	require_once(t3lib_extMgm::extPath('rte').'class.tx_rte_base.php');
-}
-if (t3lib_extMgm::isLoaded('rtehtmlarea'))	{
+} elseif (t3lib_extMgm::isLoaded('rtehtmlarea'))	{
 	require_once(t3lib_extMgm::extPath('rtehtmlarea').'class.tx_rtehtmlarea_base.php');
+} elseif (t3lib_extMgm::isLoaded('tinymce_rte'))	{
+	require_once(t3lib_extMgm::extPath('tinymce_rte').'class.tx_tinymce_rte_base.php');
 }
 
 	/**
-	 * [Describe function...]
+	 * Extending the template class to "fullDoc"
 	 *
 	 */
 class fullDoc extends template	{
@@ -131,7 +136,7 @@ class fullDoc extends template	{
 }
 
 	/**
-	 * [Describe function...]
+	 * This class is responsible for rendering the kb_conttable wizard backend module
 	 *
 	 */
 class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
@@ -252,6 +257,13 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 				$this->rteMode = 'rtehtmlarea';
 			}
 		}
+		if (!$available && t3lib_extMgm::isLoaded('tinymce_rte'))	{
+			$this->rteObj = t3lib_div::makeInstance('tx_tinymce_rte_base');
+			$available = $this->rteObj->isAvailable();
+			if ($available)	{
+				$this->rteMode = 'tinymce_rte';
+			}
+		}
 		if ($this->rteMode != 'none')	{
 			$this->tceforms = t3lib_div::makeInstance('t3lib_TCEforms');
 			$this->tceforms->initDefaultBEmode();
@@ -272,7 +284,7 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 		$this->funcs = t3lib_div::makeInstance('tx_kbconttable_funcs');
 		$this->funcs->init($this);
 
-		$this->xmlhandler = t3lib_div::makeInstance('tx_kbconttable_xmlrelhndl');
+		$this->xmlhandler = t3lib_div::makeInstance('tx_kbconttable_tv_xmlrelhndl');
 		$this->xmlhandler->init($this->altRoot);
 
 		// Get Icons
@@ -360,8 +372,8 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 			if (!count($this->tableData))	{
 				$this->flexDS = $this->funcs->getDefaultTable_DataDS($this->flexDS, $this->flexData);
 				$this->flexData = $this->funcs->setDataFields_byDS($this->flexDS, $this->flexData);
-				$this->flexDSXML = t3lib_div::array2xml($this->flexDS, '', 0, 'T3DataStructure');
-				$this->flexDataXML = t3lib_div::array2xml($this->flexData, '', 0, 'T3FlexForms');
+				$this->flexDSXML = t3lib_div::array2xml_cs($this->flexDS, 'T3DataStructure');
+				$this->flexDataXML = t3lib_div::array2xml_cs($this->flexData, 'T3FlexForms');
 				$update = Array(
 					$this->P['field'] => $this->flexDSXML,
 					$this->flexField => $this->flexDataXML,
@@ -410,8 +422,8 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 						list($cont, $err) = $this->checkRowColumnCount();
 						$content .= $cont;
 					} else	{
-						$this->flexDSXML = t3lib_div::array2xml($this->flexDS, '', 0, 'T3DataStructure');
-						$this->flexDataXML = t3lib_div::array2xml($this->flexData, '', 0, 'T3FlexForms');
+						$this->flexDSXML = t3lib_div::array2xml_cs($this->flexDS, 'T3DataStructure');
+						$this->flexDataXML = t3lib_div::array2xml_cs($this->flexData, 'T3FlexForms');
 						$update = Array(
 							$this->P['field'] => $this->flexDSXML,
 							$this->flexField => $this->flexDataXML,
@@ -430,7 +442,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 			}
 			$error_content = $content;
 
-			$this->rteMode = intval($this->flexData['data']['sDEF']['lDEF']['rte_mode']['vDEF'])?$this->rteMode:'';
+			$this->rteMode = intval($this->flexData['data']['sDEF']['lDEF']['rte_mode']['vDEF'])?$this->rteMode:'none';
 
 			$this->content = '';
 			// Render content ---- begin
@@ -474,8 +486,20 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 			$this->content .= 'var rteMode = "'.$this->rteMode.'";'.chr(10);
 			switch ($this->rteMode)	{
 				case 'rtehtmlarea':
-					$this->content .= 'function RTEshow() {
-	RTEarea[0]["editor"].setMode("wysiwyg");
+					$this->content .= '
+
+RTEarea.init();
+
+var tmpObj = document.getElementById("RTEarearte_content");
+tmpObj.onreset = resetRTE;
+
+if (!rteInitialized)	{
+	try { RTEinit(); rteInitialized = 1 } catch(e) { alert("Could not initialize RTE!"); };
+}
+
+
+func'.'tion RTEshow() {
+
 }
 
 
@@ -530,6 +554,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 			case 3:
 			case 2:
 			case 1:
+				$cellEdit = $this->getCellEdit();
 				$err = 0;
 				// Render Table ---- begin
 				if (!$err)	{
@@ -548,7 +573,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 					$this->content.=$this->doc->spacer(15);
 					$this->content.= '<div id="DTM-cellprops-DIV" class="c-tablayer" style="display: none;">'.chr(10);
 					$this->content.= '<a name="cellprops"></a>'.chr(10);
-					$this->content.=$this->doc->section('Cell Properties', $this->getCellEdit(), 0, 1);
+					$this->content.=$this->doc->section('Cell Properties', $cellEdit, 0, 1);
 					$this->content.= '</div>';
 
 					if ($this->MOD_SETTINGS['clipBoard'] && $this->showClipboard)	{
@@ -1047,7 +1072,9 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 	<a href="#" onClick="if (prepare_form(1)) { return document.editform.submit(); } else { return false; }"><img '.$this->Pic_saveAndClose.'></a>
 	<a href="#" onClick="if (unsaved_global_content||unsaved_content) { if (confirm(\'There is unsaved Content\nDo you really want to close the Wizard ?\')) { return goto_returnurl(); } { return false; }} else { return goto_returnurl(); }"><img '.$this->Pic_close.'></a>
 </div>'.chr(10);
-		$content.=t3lib_BEfunc::getFuncCheck(array('id' => $this->id, 'P' => $this->P),'SET[clipBoard]',$this->MOD_SETTINGS['clipBoard'],'index.php','').' '.$this->LANG->getLL('showClipBoard',1).'<br />';
+		if ($this->rteMode == 'none') {
+			$content.=t3lib_BEfunc::getFuncCheck(array('id' => $this->id, 'P' => $this->P),'SET[clipBoard]',$this->MOD_SETTINGS['clipBoard'],'index.php','').' '.$this->LANG->getLL('showClipBoard',1).'<br />';
+		}
 
 		// Opening Table Tag ---- begin
 		$content .= '<table width="100%" cellspacing="'.(intval($this->tableSettings['cellspacing'])>3?intval($this->tableSettings['cellspacing']):3).
@@ -1139,7 +1166,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 	 */
 	function getCellEdit()	{
 		if (intval($this->flexData['data']['sDEF']['lDEF']['rte_mode']['vDEF'])&&$this->rteMode!='none')	{
-			$fakePA = array(
+			$this->fakePA = array(
 				'fieldConf' => array(
 					'config' => array(
 						'cols' => 30,
@@ -1151,14 +1178,14 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 				'itemFormElName' => 'rte_content',
 				'itemFormElValue' => '',
 			);
-			$fakeRow = array(
+			$this->fakeRow = array(
 				'bodytext' => '',
 				'uid' => $this->P ['uid'],
 				'pid' => $this->P['pid']
 			);
-			$specConf = $this->tceforms->getSpecConfFromString($fakePA['extra'], $fakePA['fieldConf']['defaultExtras']);
+			$this->specConf = $this->tceforms->getSpecConfFromString($this->fakePA['extra'], $this->fakePA['fieldConf']['defaultExtras']);
 			$RTEsetup = $GLOBALS['BE_USER']->getTSConfig('RTE',t3lib_BEfunc::getPagesTSconfig($this->P['pid']));
-			$thisConfig = t3lib_BEfunc::RTEsetup($RTEsetup['properties'],'tt_content','rte_content','text');
+			$this->thisConfig = t3lib_BEfunc::RTEsetup($RTEsetup['properties'],'tt_content','rte_content','text');
 		}
 		$content = '';
 		$content .= '<div>
@@ -1337,7 +1364,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 			Content :
 		</td>
 		<td colspan="3" class="typo3-kbconttable-ceinput">
-			'.(($this->rteMode=='none')?'<textarea name="rte_content" id="rte_content" style="width: 300px; height: 200px;"></textarea>':$this->rteObj->drawRTE($this->tceforms, 'tt_content', 'rte_content', $fakeRow, $fakePA, $specConf, $thisConfig, 'text', $this->doc->backPath.'../', $this->P['pid'])).'
+			'.(($this->rteMode=='none')?'<textarea name="rte_content" id="rte_content" style="width: 300px; height: 200px;"></textarea>':$this->rteObj->drawRTE($this->tceforms, 'tt_content', 'rte_content', $this->fakeRow, $this->fakePA, $this->specConf, $this->thisConfig, 'text', $this->doc->backPath.'../', $this->P['pid'])).'
 		</td>
 	</tr>
 	':'').'
@@ -1352,10 +1379,10 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 	 * @param	string		Label of the GET parameters
 	 * @return	string		required hidden fields
 	 */
-	function getHiddenArray($ar, $Glabel)	{
+	function getHiddenArray($ar, $Glabel) {
 		$content = '';
-		if (is_array($ar))	{
-			foreach ($ar as $label => $val)	{
+		if (is_array($ar)) {
+			foreach ($ar as $label => $val) {
 				$content .= '<input type="hidden" name="'.$Glabel.'['.$label.']" value="'.htmlspecialchars($val).'">'.chr(10);
 			}
 		}
@@ -1452,6 +1479,7 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 	 *
 	 * @param	string		Error string
 	 * @param	integer		If true not stored message gets shown
+	 * @param	[type]		$info: ...
 	 * @return	void
 	 */
 	function error($error, $not_stored = 0, $info = '')	{
@@ -1719,8 +1747,13 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 				break;
 			}
 		}
-		if (intval($this->flexData['data']['sDEF']['lDEF']['rte_mode']['vDEF']))	{
-			$params['content'] .= '<input type="hidden" name="kbconttable[data]['.($params['rows']+1).']['.($params['cols']+1).'][rte_content]" value="'.htmlentities($params['columnAr']['rte_content'], ENT_COMPAT, $GLOBALS['LANG']->charSet).'">'.chr(10);
+		if (intval($this->flexData['data']['sDEF']['lDEF']['rte_mode']['vDEF'])) {
+			if ($this->rteMode == 'tinymce_rte') {
+				$rteValue = $this->rteObj->transformContent('rte', $params['columnAr']['rte_content'], 'tt_content', 'rte_content', $this->fakeRow, $this->specConf, $this->thisConfig, $this->doc->backPath.'../', $this->P['pid']);
+				$params['content'] .= '<input type="hidden" name="kbconttable[data]['.($params['rows']+1).']['.($params['cols']+1).'][rte_content]" value="'.htmlentities($rteValue, ENT_COMPAT, $GLOBALS['LANG']->charSet).'">'.chr(10);
+			} else {
+				$params['content'] .= '<input type="hidden" name="kbconttable[data]['.($params['rows']+1).']['.($params['cols']+1).'][rte_content]" value="'.htmlentities($params['columnAr']['rte_content'], ENT_COMPAT, $GLOBALS['LANG']->charSet).'">'.chr(10);
+			}
 			$params['content'] .= '<input type="hidden" name="kbconttable[data]['.($params['rows']+1).']['.($params['cols']+1).'][lock_rte_content]" value="'.($params['columnAr']['lock_content']?1:0).'">'.chr(10);
 		}
 		return Array(0, 0, '');
@@ -1788,7 +1821,7 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 		$this->xmlhandler->pasteRecord('localcopy', $makeLocalRecord, '');
 //		header('Location: '.t3lib_div::locationHeaderUrl('index.php?'.$this->funcs->linkParams()));
 	}
-	
+
 	/****************************************
 	 *
 	 * FAST MODE
@@ -1796,10 +1829,11 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 	 * Methods required for fast mode
 	 *
 	 ****************************************/
-	
+
 	/**
 	 * Filters out uneeded fields of the Flexdata array before storing depending on if we are in fast-mode or not.
 	 *
+	 * @param	[type]		$flexData: ...
 	 * @return	void
 	 */
 	function filter_unneededFlexData($flexData)	{
@@ -1849,11 +1883,13 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 		}
 		return $flexData;
 	}
-	
-	
+
+
 	/**
 	 * Filters out uneeded fields of the Flex DS array before storing depending on if we are in fast-mode or not.
 	 *
+	 * @param	[type]		$flexDS: ...
+	 * @param	[type]		$flexData: ...
 	 * @return	void
 	 */
 	function filter_unneededFlexDS($flexDS, $flexData)	{

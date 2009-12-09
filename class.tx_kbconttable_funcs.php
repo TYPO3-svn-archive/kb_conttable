@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *  Code used from:
 *  (c) 2003, 2004 Kasper Skaarhoj (kasper@typo3.com)
@@ -29,36 +29,39 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
  *
  *
- *   65: class tx_kbconttable_funcs
- *   73:     function init(&$parent)
- *   84:     function linkParams()
- *   98:     function getTableSettings($flexData)
- *  128:     function getTableData($tableSettings, $flexData)
- *  286:     function iterateTableData($tableSettings, $tableData, $funcObj, $func_rowBegin, $func_column, $func_rowspan, $func_columnspan, $func_rowEnd, &$params)
- *  446:     function splitConfArray($conf,$splitCount)
- *  523:     function setDataFields_byDS($flexDS, $flexData)
+ *   68: class tx_kbconttable_funcs
+ *  100:     function init(&$parent)
+ *  115:     function linkParams()
+ *  129:     function getTableSettings($flexData)
+ *  159:     function getTableData($tableSettings, $flexData)
+ *  353:     function iterateTableData($tableSettings, $tableData, $funcObj, $func_rowBegin, $func_column, $func_rowspan, $func_columnspan, $func_rowEnd, &$params, $debug = false)
+ *  524:     function splitConfArray($conf,$splitCount)
+ *  601:     function setDataFields_byDS($flexDS, $flexData)
  *
  *              SECTION: XML Generation
- *  552:     function defaultCellDS()
- *  567:     function getDefaultTable_CellDS($row, $col)
- *  583:     function getDefaultTable_RowDS($row, $columns)
- *  609:     function getDefaultTable_DataDS($xmlArray, &$flexData)
- *  643:     function &columnLabel(&$ar, $col)
- *  661:     function defaultFlexDS()
+ *  630:     function defaultCellDS()
+ *  644:     function defaultCellDS_fast()
+ *  657:     function defaultCellDS_normal()
+ *  670:     function defaultCellDS_rte()
+ *  686:     function getDefaultTable_CellDS($row, $col)
+ *  711:     function getDefaultTable_RowDS($row, $columns)
+ *  737:     function getDefaultTable_DataDS($xmlArray, &$flexData)
+ *  771:     function &columnLabel(&$ar, $col)
+ *  789:     function defaultFlexDS()
  *
  *              SECTION: Storage Folders and Templates
- *  680:     function findingStorageFolderIds()
- *  714:     function getStorageFolders()
- *  734:     function getExistingTemplates($folders)
+ *  808:     function findingStorageFolderIds()
+ *  842:     function getStorageFolders()
+ *  862:     function getExistingTemplates($folders)
  *
- * TOTAL FUNCTIONS: 16
+ * TOTAL FUNCTIONS: 19
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
@@ -344,6 +347,7 @@ class tx_kbconttable_funcs	{
 	 * @param	string		Method reference to the method which gets called when a colspaned column is encountered
 	 * @param	string		Method reference to the method which gets called when a row ends
 	 * @param	array		Parmater array. Can get used to pass parameters to the methods and gets filled with parameters defining the actual position in the table and containing the contents of each actual cell
+	 * @param	[type]		$debug: ...
 	 * @return	array		Array containing (rows, columns iteraded, error string)
 	 */
 	function iterateTableData($tableSettings, $tableData, $funcObj, $func_rowBegin, $func_column, $func_rowspan, $func_columnspan, $func_rowEnd, &$params, $debug = false) {
@@ -630,8 +634,8 @@ class tx_kbconttable_funcs	{
 		}
 		return $this->defaultCellDS;
 	}
-	
-	
+
+
 	/**
 	 * Returns the default Flex DS XML for a single cell in fast-mode
 	 *
@@ -644,7 +648,7 @@ class tx_kbconttable_funcs	{
 		}
 		return $this->defaultCellDS_fast;
 	}
-	
+
 	/**
 	 * Returns the default Flex DS XML for a single cell in normal-mode
 	 *
@@ -657,7 +661,7 @@ class tx_kbconttable_funcs	{
 		}
 		return $this->defaultCellDS_fast;
 	}
-	
+
 	/**
 	 * Returns the default Flex DS XML for a single cell in normal-mode
 	 *
@@ -860,7 +864,7 @@ class tx_kbconttable_funcs	{
 		foreach ($folders as $folder)	{
 			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_kbconttable_tmpl', 'pid='.$folder['uid'].' '.t3lib_BEfunc::deleteClause('tx_kbconttable_tmpl'), '', 'name');
 			while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))	{
-				$row['_label'] = t3lib_BEfunc::getRecordTitle('tx_kbconttable_tmpl', $row).' ('.$row['uid'].') ('.$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.php:page').' = '.$folder['uid'].' : '.t3lib_BEfunc::getRecordTitle('pages', $folder).')';
+				$row['_label'] = t3lib_BEfunc::getRecordTitle('tx_kbconttable_tmpl', $row).' ('.$row['uid'].') ('.$GLOBALS['LANG']->sL('LLL:EXT:kb_conttable/locallang_db.xml:page').' = '.$folder['uid'].' : '.t3lib_BEfunc::getRecordTitle('pages', $folder).')';
 				$templates[] = $row;
 			}
 			$GLOBALS['TYPO3_DB']->sql_free_result($res);

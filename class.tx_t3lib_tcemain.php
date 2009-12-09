@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,27 +28,32 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
  *
  *
- *   50: class tx_t3lib_tcemain_process_datamap
- *   58:     function tx_t3lib_tcemain_process_datamap()
- *   72:     function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, $calling_obj)
- *  205:     function getDataAr(&$flexData, $flexDS, $flexDataOrig)
- *  240:     function initFlexform(&$incomingFieldArray, $id)
+ *   54: class tx_t3lib_tcemain_process_datamap
+ *   64:     function tx_t3lib_tcemain_process_datamap()
+ *   79:     function processDatamap_preProcessIncomingFieldArray(&$incomingFieldArray, $table, $id, $calling_obj)
+ *   91:     function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, $calling_obj)
+ *  256:     function mergeTableStyles($flexData, $newFlexData)
+ *  275:     function initDS_RTE($flexDS, &$flexData)
+ *  304:     function removeDS_RTE($flexDS, &$flexData)
+ *  329:     function getDataAr(&$flexData, $flexDS, $flexDataOrig)
+ *  364:     function initFlexform(&$incomingFieldArray, $id)
  *
- * TOTAL FUNCTIONS: 4
+ * TOTAL FUNCTIONS: 8
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
 
 require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_funcs.php');
 class tx_t3lib_tcemain_process_datamap	{
-	var $flexField = 'tx_templavoila_flex';
+	var $flexField = 'tx_kbconttable_flex';
+	var $flexDSfield = 'tx_kbconttable_flex_ds';
 
 
 	/**
@@ -61,7 +66,7 @@ class tx_t3lib_tcemain_process_datamap	{
 		$this->funcs->init($this);
 		$this->fastMode = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['fastMode']?true:false;
 	}
-	
+
 	/**
 	 * This method must exist to fix a bug in T3 3.7.0. It is just dummy as it gets never called. The below method gets called instead.
 	 *
@@ -86,14 +91,14 @@ class tx_t3lib_tcemain_process_datamap	{
 	function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, $calling_obj)	{
 		if (($table=='tt_content')&&is_array($incomingFieldArray)&&($incomingFieldArray['CType']=='kb_conttable_pi1'))	{
 			if (substr($id, 0, 3)=='NEW')	{
-				$flexDS = t3lib_div::xml2array($incomingFieldArray['tx_kbconttable_flex_ds']);
+				$flexDS = t3lib_div::xml2array($incomingFieldArray[$this->flexDSfield]);
 				if (!is_array($flexDS))	{
 					$this->initFlexform($incomingFieldArray, $id);
 				}
 			} else if (t3lib_div::intInRange($id, 1))	{
 						// We have an UID, this is an update, check flexform fields
 					$flexData = $incomingFieldArray[$this->flexField];
-					$flexDS = t3lib_div::xml2array($incomingFieldArray['tx_kbconttable_flex_ds']);
+					$flexDS = t3lib_div::xml2array($incomingFieldArray[$this->flexDSfield]);
 					$row = t3lib_BEfunc::getRecord('tt_content', $id);
 					$flexDataOrig = t3lib_div::xml2array($row[$this->flexField]);
 					if (!(is_array($flexData)&&is_array($flexDS)&&is_array($flexDataOrig)))	{
@@ -137,16 +142,16 @@ class tx_t3lib_tcemain_process_datamap	{
 												}
 											}
 										}
-										$flex = t3lib_div::array2xml($flexAr, '', 0, 'T3FlexForms');
+										$flex = t3lib_div::array2xml_cs($flexAr, 'T3FlexForms');
 										$flexData = $flexAr;
 										$vals = array(
 											$this->flexField => $flex,
-											'tx_kbconttable_flex_ds' => $rec['flex_ds'],
+											$this->flexDSfield => $rec['flex_ds'],
 											'tstamp' => time(),
 										);
 										$GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.$id, $vals);
 										$flexDS = t3lib_div::xml2array($rec['flex_ds']);
-										$incomingFieldArray['tx_kbconttable_flex_ds'] = $rec['flex_ds'];
+										$incomingFieldArray[$this->flexDSfield] = $rec['flex_ds'];
 									break;
 									case '1':	// Copy
 										$xmlhandler = t3lib_div::makeInstance('tx_kbconttable_xmlrelhndl');
@@ -163,10 +168,10 @@ class tx_t3lib_tcemain_process_datamap	{
 												}
 											}
 										}
-										$flex = t3lib_div::array2xml($flexAr, '', 0, 'T3FlexForms');
+										$flex = t3lib_div::array2xml_cs($flexAr, 'T3FlexForms');
 										$vals = array(
 											$this->flexField => $flex,
-											'tx_kbconttable_flex_ds' => $rec['flex_ds'],
+											$this->flexDSfield => $rec['flex_ds'],
 											'tstamp' => time(),
 										);
 										$GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.$id, $vals);
@@ -190,7 +195,7 @@ class tx_t3lib_tcemain_process_datamap	{
 										$rec = t3lib_BEfunc::getRecord('tt_content', $id);
 										$flexData = t3lib_div::xml2array($rec[$this->flexField]);
 										$flexDS = t3lib_div::xml2array($rec['flex_ds']);
-										$incomingFieldArray['tx_kbconttable_flex_ds'] = $rec['flex_ds'];
+										$incomingFieldArray[$this->flexDSfield] = $rec['flex_ds'];
 									break;
 									case '2':	// Reference
 											// Just assign
@@ -198,17 +203,17 @@ class tx_t3lib_tcemain_process_datamap	{
 										$flexData = t3lib_div::xml2array($rec['flex']);
 										$vals = array(
 											$this->flexField => $flex,
-											'tx_kbconttable_flex_ds' => $rec['flex_ds'],
+											$this->flexDSfield => $rec['flex_ds'],
 											'tstamp' => time(),
 										);
 										$GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.$id, $vals);
 										$flexDS = t3lib_div::xml2array($rec['flex_ds']);
-										$incomingFieldArray['tx_kbconttable_flex_ds'] = $rec['flex_ds'];
+										$incomingFieldArray[$this->flexDSfield] = $rec['flex_ds'];
 									break;
 									case '3':	// Keep
 										$newFlexData = t3lib_div::xml2array($rec['flex']);
 										$flexData = $this->mergeTableStyles($flexData, $newFlexData);
-										$flex = t3lib_div::array2xml($flexData, '', 0, 'T3FlexForms');
+										$flex = t3lib_div::array2xml_cs($flexData, 'T3FlexForms');
 										$vals = array(
 											$this->flexField => $flex,
 										);
@@ -225,15 +230,15 @@ class tx_t3lib_tcemain_process_datamap	{
 							}
 							$flexData = t3lib_div::array_merge_recursive_overrule($flexDataOrig, $flexData);
 							$flexData = $this->funcs->setDataFields_byDS($flexDS, $flexData);
-							$DS = t3lib_div::array2xml($flexDS, '', 0, 'T3DataStructure');
-							$flex = t3lib_div::array2xml($flexData, '', 0, 'T3FlexForms');
+							$DS = t3lib_div::array2xml_cs($flexDS, 'T3DataStructure');
+							$flex = t3lib_div::array2xml_cs($flexData, 'T3FlexForms');
 							$vals = array(
-								'tx_kbconttable_flex_ds' => $DS,
+								$this->flexDSfield => $DS,
 								$this->flexField => $flex,
 								'tstamp' => time(),
 							);
 							$GLOBALS['TYPO3_DB']->exec_UPDATEquery('tt_content', 'uid='.$id, $vals);
-							$incomingFieldArray['tx_kbconttable_flex_ds'] = $DS;
+							$incomingFieldArray[$this->flexDSfield] = $DS;
 						}
 						$incomingFieldArray[$this->flexField] = $flexData;
 					}
@@ -241,8 +246,13 @@ class tx_t3lib_tcemain_process_datamap	{
 		} // if (($table=='tt_content')&&is_array($incomingFieldArray)&&($incomingFieldArray['CType']=='kb_conttable_pi1'))	{
 	}
 
-
-
+	/**
+	 * Merges new flex data into existing array, overwriting specific fields/values
+	 *
+	 * @param	array		Existing flex array to merge data into
+	 * @param	array		New flex data being merged in
+	 * @return	array		Merged arrays
+	 */
 	function mergeTableStyles($flexData, $newFlexData)	{
 		$sDef = $flexData['data']['sDEF'];
 		foreach ($flexData['data'] as $sheet => $sheetAr)	{
@@ -255,7 +265,13 @@ class tx_t3lib_tcemain_process_datamap	{
 		return $flexData;
 	}
 
-
+	/**
+	 * Initializes the Flex DS (datastructure) for an RTE field
+	 *
+	 * @param	array		The current flex datastructure
+	 * @param	array		The current flex values
+	 * @return	array		The modified flex datastructure with the DS for an RTE
+	 */
 	function initDS_RTE($flexDS, &$flexData)	{
 		$rows = t3lib_div::trimExplode(',', $flexData['data']['sDEF']['lDEF']['rows']['vDEF'], 1);
 		if (is_array($rows))	{
@@ -278,6 +294,13 @@ class tx_t3lib_tcemain_process_datamap	{
 		return $flexDS;
 	}
 
+	/**
+	 * Removes the DS for an RTE from an flex DS
+	 *
+	 * @param	array		The current flex datastructure
+	 * @param	array		The current flex values
+	 * @return	array		The modified flex datastructure with the RTE DS removed
+	 */
 	function removeDS_RTE($flexDS, &$flexData)	{
 		$rows = t3lib_div::trimExplode(',', $flexData['data']['sDEF']['lDEF']['rows']['vDEF'], 1);
 		if (is_array($rows))	{
@@ -326,8 +349,8 @@ class tx_t3lib_tcemain_process_datamap	{
 		$flexData['data']['newtemplate']['lDEF']['content_mode']['vDEF'] = 0;
 		$flexData['data']['newtemplate']['lDEF']['storage_folder']['vDEF'] = 0;
 		$flexData = t3lib_div::array_merge_recursive_overrule($flexDataOrig, $flexData);
-		$ret['flex'] = t3lib_div::array2xml($flexData, '', 0, 'T3FlexForms');
-		$ret['flex_ds'] = t3lib_div::array2xml($flexDS, '', 0, 'T3DataStructure');
+		$ret['flex'] = t3lib_div::array2xml_cs($flexData, 'T3FlexForms');
+		$ret['flex_ds'] = t3lib_div::array2xml_cs($flexDS, 'T3DataStructure');
 		return $ret;
 	}
 
@@ -345,7 +368,7 @@ class tx_t3lib_tcemain_process_datamap	{
 		$flexDS = $this->funcs->getDefaultTable_DataDS($flexDS, $flexData);
 		$flexData = $this->funcs->setDataFields_byDS($flexDS, $flexData);
 		$incomingFieldArray[$this->flexField] = $flexData;
-		$incomingFieldArray['tx_kbconttable_flex_ds'] = t3lib_div::array2xml($flexDS, '', 0, 'T3DataStructure');
+		$incomingFieldArray[$this->flexDSfield] = t3lib_div::array2xml_cs($flexDS, 'T3DataStructure');
 	}
 
 

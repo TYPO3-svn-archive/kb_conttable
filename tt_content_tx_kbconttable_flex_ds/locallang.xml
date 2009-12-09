@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Labels for the kb_conttable wizard module</description>
+        <type>module</type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="title">Content table wizard</label>
+            <label index="function_edittable_medium">Edit medium table</label>
+            <label index="function_edittable_big">Edit big table</label>
+            <label index="function_edittable_no">Edit table</label>
+            <label index="row_prefix">Row</label>
+            <label index="column_prefix">Column</label>
+            <label index="error_header">An Error occured</label>
+            <label index="error_location">In file &quot;###FILE###&quot; at line ###LINE### in method ###CLASS###::###FUNCTION###</label>
+            <label index="error_rowcount">The Row-Count is not the same in all Columns</label>
+            <label index="error_colcount">The Column-Count is not the same in all Rows</label>
+            <label index="error_colrowspan_overlap">Colspan and Rowspan of Table cells are overlapping</label>
+            <label index="error_msg">Delete this content element and create it again. Should this error occure often please report it to your administrator so he can report it to the extension author.</label>
+            <label index="error_msg_notstored">The modified data was not stored because of the error. Please make all modifications since the last save again (Except cell content editing).</label>
+            <label index="reset_colrowspan">Reset Colspan/Rowspan of all Cells</label>
+            <label index="showClipBoard">Show clipboard</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="title">Content Tabellen Wizar</label>
+            <label index="function_edittable_medium">Mittlere Tabelle</label>
+            <label index="function_edittable_big">Grosse Tabelle</label>
+            <label index="function_edittable_no">Tabelle</label>
+            <label index="row_prefix">Zeile</label>
+            <label index="column_prefix">Spalte</label>
+            <label index="error_location">In Datei &quot;###FILE###&quot; auf Zeile ###LINE### in Methode ###CLASS###::###FUNCTION###</label>
+            <label index="error_header">Ein Fehler trat auf</label>
+            <label index="error_rowcount">Die Zeilen Anzahl ist nicht die selbe in allen Spalten</label>
+            <label index="error_colcount">Die Spalten Anzahl ist nicht die selbe in allen Zeilen</label>
+            <label index="error_colrowspan_overlap">Colspan und Rowspan der Zellen überlappen</label>
+            <label index="error_msg">Löschen Sie dieses Inhaltselement und legen Sie es neu an. Sollte der Fehler öfters auftreten melden Sie dies bitte Ihrem Administrator damit er es dem Extension-Entwickler mitteilen kann.</label>
+            <label index="error_msg_notstored">Die Änderungen wurden aufgrund eines Fehlers nicht gespeichert. Führen Sie alle Änderungen seit dem letzen Speichern nochmals durch (Bis auf Inhaltselement abänderungen - diese wurden gepseichert).</label>
+            <label index="reset_colrowspan">Col/Rowspan aller Zellen zurücksetzen</label>
+            <label index="showClipBoard">Zeige Klemmbrett</label>
+        </languageKey>
+    </data>
+    <orig_hash type="array">
+        <languageKey index="default" type="array">
+            <label index="title" type="integer">188880493</label>
+            <label index="function_edittable_medium" type="integer">178953019</label>
+            <label index="function_edittable_big" type="integer">204742172</label>
+            <label index="function_edittable_no" type="integer">194091224</label>
+            <label index="row_prefix" type="integer">175126138</label>
+            <label index="column_prefix" type="integer">26701183</label>
+            <label index="error_header" type="integer">157696904</label>
+            <label index="error_location" type="integer">177281150</label>
+            <label index="error_rowcount" type="integer">216480398</label>
+            <label index="error_colcount" type="integer">85392894</label>
+            <label index="error_colrowspan_overlap" type="integer">79121762</label>
+            <label index="error_msg" type="integer">182779084</label>
+            <label index="error_msg_notstored" type="integer">240156568</label>
+            <label index="reset_colrowspan" type="integer">190288875</label>
+            <label index="showClipBoard" type="integer">249278403</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="title" type="integer">188880493</label>
+            <label index="function_edittable_medium" type="integer">178953019</label>
+            <label index="function_edittable_big" type="integer">204742172</label>
+            <label index="function_edittable_no" type="integer">194091224</label>
+            <label index="row_prefix" type="integer">175126138</label>
+            <label index="column_prefix" type="integer">26701183</label>
+            <label index="error_location" type="integer">177281150</label>
+            <label index="error_header" type="integer">157696904</label>
+            <label index="error_rowcount" type="integer">216480398</label>
+            <label index="error_colcount" type="integer">85392894</label>
+            <label index="error_colrowspan_overlap" type="integer">79121762</label>
+            <label index="error_msg" type="integer">182779084</label>
+            <label index="error_msg_notstored" type="integer">240156568</label>
+            <label index="reset_colrowspan" type="integer">190288875</label>
+            <label index="showClipBoard" type="integer">249278403</label>
+        </languageKey>
+    </orig_hash>
+    <orig_text type="array">
+        <languageKey index="default" type="array">
+        </languageKey>
+        <languageKey index="de" type="array">
+        </languageKey>
+    </orig_text>
+</T3locallang>

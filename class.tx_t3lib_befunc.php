@@ -1,7 +1,8 @@
 <?php
 /***************************************************************
 *  Copyright notice
-*  *  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -25,21 +26,21 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
  *
  *
  *
- *   52: class tx_t3lib_befunc_getFlexFormDS
- *   65:     function getFlexFormDS_postProcessDS(&$dsArray, $conf, &$row, $table)
- *  182:     function checkFields(&$flexData, &$newDSArray, $val)
- *  306:     function checkRows(&$flexData, &$newDSArray, $val)
- *  337:     function checkSimpleTextField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
- *  363:     function checkSimpleSelectField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
- *  390:     function checkSimpleIntField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
- *  416:     function checkSimpleCheckField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
+ *   53: class tx_t3lib_befunc_getFlexFormDS
+ *   68:     function getFlexFormDS_postProcessDS(&$dsArray, $conf, &$row, $table)
+ *  199:     function checkFields(&$flexData, &$newDSArray, $val)
+ *  323:     function checkRows(&$flexData, &$newDSArray, $val)
+ *  354:     function checkSimpleTextField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
+ *  382:     function checkSimpleSelectField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
+ *  411:     function checkSimpleIntField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
+ *  439:     function checkSimpleCheckField(&$flexData, &$newDSArray, $val, $val_sheet, $lDEF, $vDEF, $field)
  *
  * TOTAL FUNCTIONS: 7
  * (This index is automatically created/updated by the extension "extdeveval")
@@ -50,7 +51,8 @@
 require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_funcs.php');
 
 class tx_t3lib_befunc_getFlexFormDS	{
-	var $flexField = 'tx_templavoila_flex';
+	var $flexField = 'tx_kbconttable_flex';
+	var $flexDSfield = 'tx_kbconttable_flex_ds';
 
 
 	/**
@@ -68,7 +70,7 @@ class tx_t3lib_befunc_getFlexFormDS	{
 		if (!$this->funcs)	{
 			$this->funcs = t3lib_div::makeInstance('tx_kbconttable_funcs');
 		}
-		if (($table=='tt_content')&&($conf['ds_tableField']=='tt_content:tx_kbconttable_flex_ds')&&$row['CType']=='kb_conttable_pi1')	{
+		if (($table=='tt_content')&&($conf['ds_tableField']=='tt_content:'.$this->flexDSfield)&&$row['CType']=='kb_conttable_pi1')	{
 			$TSconfig = t3lib_BEfunc::getPagesTSconfig($row['pid']);
 			$like_admin = 0;
 			$like_admin |= t3lib_div::inList($TSconfig['tx_kbconttable.']['like_admins_user'], $BE_USER->user['uid'])?1:0;
@@ -83,7 +85,7 @@ class tx_t3lib_befunc_getFlexFormDS	{
 				$tcemainHook = t3lib_div::makeInstance('tx_t3lib_tcemain_process_datamap');
 				$fieldArray = array();
 				$tcemainHook->initFlexform($fieldArray, 0);
-				$dsArray = t3lib_div::xml2array($fieldArray['tx_kbconttable_flex_ds']);
+				$dsArray = t3lib_div::xml2array($fieldArray[$this->flexDSfield]);
 				return true;
 			} else {
 				$flexData = t3lib_div::xml2array($row[$this->flexField]);
@@ -176,7 +178,7 @@ class tx_t3lib_befunc_getFlexFormDS	{
 						// Write back modified flex data field.
 					$dataArray = Array();
 						// Only active after first save with initialized fields.
-					$dataArray['tt_content'][$row['uid']][$this->flexField] = t3lib_div::array2xml($flexData, '', 0, 'T3DataStructure');
+					$dataArray['tt_content'][$row['uid']][$this->flexField] = t3lib_div::array2xml_cs($flexData, 'T3DataStructure');
 					$tce = t3lib_div::makeInstance('t3lib_TCEmain');
 					$tce->start($dataArray, Array());
 					$tce->process_datamap();

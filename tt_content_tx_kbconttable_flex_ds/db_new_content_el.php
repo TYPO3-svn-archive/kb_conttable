@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2003-2004 Robert Lemke (robert@typo3.org)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -13,9 +13,6 @@
 *
 *  The GNU General Public License can be found at
 *  http://www.gnu.org/copyleft/gpl.html.
-*  A copy is found in the textfile GPL.txt and important notices to the license
-*  from the author is found in LICENSE.txt distributed with these scripts.
-*
 *
 *  This script is distributed in the hope that it will be useful,
 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -25,39 +22,12 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * New content elements wizard for templavoila
+ * New content element wizard for kb_conttable elements
  *
- * $Id: db_new_content_el.php,v 1.1.1.1 2005/04/13 17:37:43 kraftb Exp $
- * Originally based on the CE wizard / cms extension by Kasper Skaarhoj <kasper@typo3.com>
- * XHTML compatible.
+ * $Id$
  *
- * @author		Robert Lemke <robert@typo3.org>
- * @coauthor	Kasper Skaarhoj <kasper@typo3.com>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- *
- *
- *  100: class tx_templavoila_posMap extends t3lib_positionMap
- *  110:     function wrapRecordTitle($str,$row)
- *  124:     function onClickInsertRecord($row,$vv,$moveUid,$pid,$sys_lang=0)
- *
- *
- *  152: class tx_templavoila_dbnewcontentel
- *  175:     function init()
- *  211:     function main()
- *  355:     function printContent()
- *
- *              SECTION: OTHER FUNCTIONS:
- *  384:     function getWizardItems()
- *  394:     function wizardArray()
- *
- * TOTAL FUNCTIONS: 7
- * (This index is automatically created/updated by the extension "extdeveval")
- *
- */
-
 
 
 unset($MCONF);

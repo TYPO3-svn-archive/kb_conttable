@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004 Kraft Bernhard (kraftb@kraftb.at)
+*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
 *  All rights reserved
 *  based on code by :
 *  (c) 2003, 2004  Kasper Skårhøj (kasper@typo3.com) / Robert Lemke (robert@typo3.org)
@@ -29,7 +29,7 @@
  *
  * $Id$
  *
- * @author	Kraft Bernhard <kraftb@kraftb.at>
+ * @author	Bernhard Kraft <kraftb@think-open.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -39,12 +39,12 @@
  *   53: class tx_kbconttable_berenderCE
  *   64:     function init(&$calling_obj)
  *   91:     function main($elements, $row_idx, $col_idx, $row, $col, $header)
- *  236:     function TV_flexGen($row, $col, $header)
- *  320:     function renderFrameWork($dsInfo, $clipboardElInPath, $referenceInPath, $counter = 0)
- *  428:     function linkMakeLocal($str, $makeLocalRecord)
- *  443:     function linkUnlink($str, $unlinkRecord, $realDelete=FALSE)
- *  461:     function linkEdit($str, $table, $uid)
- *  474:     function linkNew($str, $parentRecord)
+ *  235:     function TV_flexGen($row, $col, $header)
+ *  319:     function renderFrameWork($dsInfo, $clipboardElInPath, $referenceInPath, $counter = 0)
+ *  425:     function linkMakeLocal($str, $makeLocalRecord)
+ *  440:     function linkUnlink($str, $unlinkRecord, $realDelete=FALSE)
+ *  458:     function linkEdit($str, $table, $uid)
+ *  471:     function linkNew($str, $parentRecord)
  *
  * TOTAL FUNCTIONS: 8
  * (This index is automatically created/updated by the extension "extdeveval")
@@ -365,7 +365,7 @@ class tx_kbconttable_berenderCE	{
 				'<img'.t3lib_iconWorks::skinImg($this->calling_obj->doc->backPath,'gfx/zoom.gif','width="12" height="12"').' title="'.$LANG->sL('LLL:EXT:lang/locallang_core.php:labels.showPage',1).'" hspace="3" alt="" style="text-align: center; vertical-align: middle;" />'.
 				'</a>';
 		} else {
-			$linkMakeLocal = (!$isLocal && $referenceInPath<=1) ? $this->linkMakeLocal('<img'.t3lib_iconWorks::skinImg($this->doc->backPath,t3lib_extMgm::extRelPath('kb_conttable').'res/makelocalcopy.gif','').' title="'.$LANG->sL('LLL:EXT:kb_conttable/locallang_db.php:makeLocal').'" border="0" alt="" />', $this->P['table'].':'.$this->P['uid'].':s_row_'.$this->row.':lDEF:column_'.$this->row.'_'.$this->col.'_elements:vDEF:'.$counter.'/'.$dsInfo['el']['table'].':'.$dsInfo['el']['id'].'/'.$isLocal.'/'.$this->id) : '';
+			$linkMakeLocal = (!$isLocal && $referenceInPath<=1) ? $this->linkMakeLocal('<img'.t3lib_iconWorks::skinImg($this->doc->backPath,t3lib_extMgm::extRelPath('kb_conttable').'res/makelocalcopy.gif','').' title="'.$LANG->sL('LLL:EXT:kb_conttable/locallang_db.xml:makeLocal').'" border="0" alt="" />', $this->P['table'].':'.$this->P['uid'].':s_row_'.$this->row.':lDEF:column_'.$this->row.'_'.$this->col.'_elements:vDEF:'.$counter.'/'.$dsInfo['el']['table'].':'.$dsInfo['el']['id'].'/'.$isLocal.'/'.$this->id) : '';
 			$isSel = (string)$this->clipObj->isSelected($dsInfo['el']['table'],$dsInfo['el']['id']);
 			if (!$isSel) {
 				$isSel = (string)$this->clipObj->isSelected('XML', $this->P['table'].':'.$this->P['uid'].':s_row_'.$this->row.':lDEF:column_'.$this->row.'_'.$this->col.'_elements:vDEF:'.$counter.'/'.$dsInfo['el']['table'].':'.$dsInfo['el']['id'].'/'.($isLocal?'1':'').'/'.$this->id);
@@ -425,7 +425,7 @@ class tx_kbconttable_berenderCE	{
 	function linkMakeLocal($str, $makeLocalRecord)	{
 		global $LANG;
 
-		return '<a href="'.t3lib_div::linkThisScript(Array('CB' => '', 'SET' => '', 'P' => $this->calling_obj->P, 'kbconttable' => '', 'kbconttable[funcs][makeLocalRecord]' => $makeLocalRecord)).'" onclick="'.htmlspecialchars('return confirm('.$LANG->JScharCode($LANG->sL('LLL:EXT:kb_conttable/locallang_db.php:makeLocalMsg')).');').'">'.$str.'</a>';
+		return '<a href="'.t3lib_div::linkThisScript(Array('CB' => '', 'SET' => '', 'P' => $this->calling_obj->P, 'kbconttable' => '', 'kbconttable[funcs][makeLocalRecord]' => $makeLocalRecord)).'" onclick="'.htmlspecialchars('return confirm('.$LANG->JScharCode($LANG->sL('LLL:EXT:kb_conttable/locallang_db.xml:makeLocalMsg')).');').'">'.$str.'</a>';
 	}
 
 	/**

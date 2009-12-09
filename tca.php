@@ -18,7 +18,7 @@ $TCA["tx_kbconttable_tmpl"] = Array (
 		),
 		"name" => Array (		
 			"exclude" => 0,		
-			"label" => "LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.name",		
+			"label" => "LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.name",		
 			"config" => Array (
 				"type" => "input",	
 				"size" => "30",
@@ -27,7 +27,7 @@ $TCA["tx_kbconttable_tmpl"] = Array (
 		),
 		"tsconfig_name" => Array (		
 			"exclude" => 0,		
-			"label" => "LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.tsconfig_name",		
+			"label" => "LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.tsconfig_name",		
 			"config" => Array (
 				"type" => "input",	
 				"size" => "30",
@@ -36,7 +36,7 @@ $TCA["tx_kbconttable_tmpl"] = Array (
 		),
 		"allowed_users" => Array (		
 			"exclude" => 0,		
-			"label" => "LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.allowed_users",		
+			"label" => "LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.allowed_users",		
 			"config" => Array (
 				"type" => "group",	
 				"internal_type" => "db",	
@@ -48,7 +48,7 @@ $TCA["tx_kbconttable_tmpl"] = Array (
 		),
 		"allowed_groups" => Array (		
 			"exclude" => 0,		
-			"label" => "LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.allowed_groups",		
+			"label" => "LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.allowed_groups",		
 			"config" => Array (
 				"type" => "group",	
 				"internal_type" => "db",	
@@ -60,13 +60,13 @@ $TCA["tx_kbconttable_tmpl"] = Array (
 		),
 		"content_mode" => Array (		
 			"exclude" => 0,		
-			"label" => "LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.content_mode",		
+			"label" => "LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.content_mode",		
 			"config" => Array (
 				"type" => "select",
 				"items" => Array (
-					Array("LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.content_mode.I.0", "0", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_0.gif"),
-					Array("LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.content_mode.I.1", "1", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_1.gif"),
-					Array("LLL:EXT:kb_conttable/locallang_db.php:tx_kbconttable_tmpl.content_mode.I.2", "2", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_2.gif"),
+					Array("LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.content_mode.I.0", "0", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_0.gif"),
+					Array("LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.content_mode.I.1", "1", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_1.gif"),
+					Array("LLL:EXT:kb_conttable/locallang_db.xml:tx_kbconttable_tmpl.content_mode.I.2", "2", t3lib_extMgm::extRelPath("kb_conttable")."res/selicon_tx_kbconttable_tmpl_content_mode_2.gif"),
 				),
 				"size" => 1,	
 				"maxitems" => 1,
