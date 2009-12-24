@@ -1,3 +1,7 @@
+2009-12-24  Bernhard Kraft <kraftb@think-open.at>
+
+	* Removed a debug statement
+
 2009-12-09  Bernhard Kraft <kraftb@think-open.at>
 
 	* Updated all PHP doc references for methods at beginning of files using extdeveval

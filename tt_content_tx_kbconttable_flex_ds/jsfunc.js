@@ -108,7 +108,6 @@ var visible_row = 0;
 var visible_column = 0;
 
 function resetRTE() {
-	alert("bla");
 }
 
 function show_celledit(row, col) {
