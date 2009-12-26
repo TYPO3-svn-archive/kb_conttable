@@ -11,9 +11,10 @@ $_EXTCONF = unserialize($_EXTCONF);    // unserializing the configuration so we 
 
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['previewTextLen'] = $_EXTCONF['previewTextLen'] ? intval($_EXTCONF['previewTextLen']) : 100;
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['colPos'] = $_EXTCONF['colPos'] ? intval($_EXTCONF['colPos']) : 10;
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['showContentCol'] = $_EXTCONF['showContentCol'] ? 1 : 0;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['showContentCol'] = intval($_EXTCONF['showContentCol']) ? 1 : 0;
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['RTEconf'] = trim($_EXTCONF['RTEconf']);
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['fastMode'] = $_EXTCONF['fastMode'] ? true : false;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['fastMode'] = intval($_EXTCONF['fastMode']) ? true : false;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['serializeData'] = intval($_EXTCONF['serializeData']) ? true : false;
 
 // TODO: Database-mode not fully implemented
 // $GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$_EXTKEY]['dbMode'] = $_EXTCONF['dbMode'] ? true : false;

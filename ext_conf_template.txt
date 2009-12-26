@@ -23,3 +23,6 @@ fastMode = 0
 ##  # cat=basic; type=boolean; label=DB mode: when this flag is set, the table data doesn't get stored as flexform XML or a serialized array but rather real tables will get used for all information
 ## dbMode = 1
 
+	# cat=basic; type=boolean; label=Serialize data: when this flag is set, the data being posted gets serialized and transmitted in one field except of many fields for each cell. This minimizes the amount of fields being transmitted to overcome restrictions of php security modules like php_security or suhosin. The drawback is more operations need to get performed for submitting data which probably slows down saving the table.
+serializeData = 0
+

@@ -1,3 +1,8 @@
+2009-12-26  Bernhard Kraft <kraftb@think-open.at>
+
+	* Removed a patch for adding a hook (this was only required in TYPO3 < 3.8.0)
+	* Added a configuration option which allows combining posted cell properties one field, to overcome mod_security/suhosin restrictions by posting too many fields.
+
 2009-12-24  Bernhard Kraft <kraftb@think-open.at>
 
 	* Removed a debug statement

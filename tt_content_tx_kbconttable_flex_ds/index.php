@@ -216,6 +216,7 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 		$this->colPos = isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['colPos']) ? intval($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['colPos']) : 10;
 		$this->dbMode = intval($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['dbMode']) ? true : false;
 		$this->fastMode = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['fastMode'] ? true : false;
+		$this->serializeData = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['kb_conttable']['serializeData'] ? 1 : 0;
 
 			// Draw the header.
 		switch((string)$this->MOD_SETTINGS['function'])	{
@@ -230,12 +231,13 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 			break;
 		}
 		$this->doc->backPath = $BACK_PATH;
-		$this->doc->form='<form name="editform" action="index.php" method="POST" enctype="multipart/form-data">';
+		$this->doc->form='<form name="editform" id="editform" action="index.php" method="POST" enctype="multipart/form-data" onsubmit="return checkSubmit();">';
 
   		$this->P = t3lib_div::GPvar('P', 1);
 		$this->pid = $this->id = $this->P['pid'];
 		$this->uid = $this->P['uid'];
   		$this->GET = t3lib_div::GPvar('kbconttable', 1);
+		$this->deSerialize_GET();
 
 		$this->clipObj = t3lib_div::makeInstance('t3lib_clipboard');
 		$this->clipObj->backPath = $this->doc->backPath;
@@ -483,6 +485,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 
 			$this->content .= '<script language="JavaScript" type="text/javascript">
 			/*<![CDATA[*/'.chr(10);
+			$this->content .= 'var serializeData = '.$this->serializeData.';'.chr(10);
 			$this->content .= 'var rteMode = "'.$this->rteMode.'";'.chr(10);
 			switch ($this->rteMode)	{
 				case 'rtehtmlarea':
@@ -1068,8 +1071,8 @@ func'.'tion RTEshow() {
 	function getTable()	{
 		$content = '';
 		$content .= '<div>
-	<a href="#" onClick="if (prepare_form(0)) { return document.editform.submit(); } else { return false; }"><img '.$this->Pic_save.'></a>
-	<a href="#" onClick="if (prepare_form(1)) { return document.editform.submit(); } else { return false; }"><img '.$this->Pic_saveAndClose.'></a>
+	<a href="#" onClick="if (prepare_form(0)) { return checkSubmit()?document.editform.submit():false; } else { return false; }"><img '.$this->Pic_save.'></a>
+	<a href="#" onClick="if (prepare_form(1)) { return checkSubmit()?document.editform.submit():false; } else { return false; }"><img '.$this->Pic_saveAndClose.'></a>
 	<a href="#" onClick="if (unsaved_global_content||unsaved_content) { if (confirm(\'There is unsaved Content\nDo you really want to close the Wizard ?\')) { return goto_returnurl(); } { return false; }} else { return goto_returnurl(); }"><img '.$this->Pic_close.'></a>
 </div>'.chr(10);
 		if ($this->rteMode == 'none') {
@@ -1397,6 +1400,7 @@ func'.'tion RTEshow() {
 	function getHiddenForm()	{
 		$content = '';
 		$content .= '<input type="hidden" name="kbconttable[close]" value="0">'.chr(10);
+		$content .= '<input type="hidden" id="serialized_data" name="kbconttable[serialized]" value="">'.chr(10);
 		$content .= $this->getHiddenArray($this->P, 'P');
 		$params = Array(
 			'content' => &$content,
@@ -1979,6 +1983,19 @@ if (top.fsMod) top.fsMod.recentIds["web"] = '.intval($this->id).';
 		$a3 = array_slice($array, $start2, $length2);
 		$a4 = array_slice($array, $start2+$length2);
 		return array_merge($a0, $a3, $a2, $a1, $a4);
+	}
+
+	/**
+	 * If the GET/POST data is serialized to use less GET/POST vars then deserialize the data in this method
+	 *
+	 * @return	void
+	 */
+	function deSerialize_GET() {
+		$decodeString = '';
+		if ($serialized = $this->GET['serialized']) {
+			parse_str($serialized, $data);
+			$this->GET['data'] = $data['data'];
+		}
 	}
 
 

@@ -150,7 +150,9 @@ function show_celledit(row, col) {
 		break;
 		case 'none':
 			var ta = document.getElementById('rte_content');
-			ta.value = form[prefix+"[rte_content]"].value;
+			if (ta) {
+				ta.value = form[prefix+"[rte_content]"].value;
+			}
 		break;
 		default:
 		break;
@@ -232,7 +234,9 @@ function save_celledit() {
 		break;
 		case 'none':
 			var ta = document.getElementById('rte_content');
-			form[prefix+"[rte_content]"].value = ta.value;
+			if (ta) {
+				form[prefix+"[rte_content]"].value = ta.value;
+			}
 		break;
 		default:
 		break;
@@ -254,6 +258,39 @@ function prepare_form(close) {
 		document.editform["kbconttable[close]"].value = close;
 		return true;
 	}
+}
+
+function getValue(element) {
+	if (element.type == "hidden") {
+		return element.value;
+	} else {
+		alert(element.type);
+	}
+}
+
+function checkSubmit() {
+	if (serializeData) {
+		var form = document.getElementById("editform");
+		var cnt = 0;
+		var serializePrefix = "kbconttable[data]";
+		var element = '';
+		var elementKey = '';
+		var elementValue = '';
+		var serial = '';
+		var tmp_serial = '';
+		for (var i in form.elements) {
+				var element = form.elements[i];
+				if (element.name && element.name.substring(0, serializePrefix.length) == serializePrefix) {
+					elementKey = element.name.substring(serializePrefix.length, element.name.length);
+					elementValue = getValue(element);
+					serial += "&data"+elementKey+"="+encodeURIComponent(elementValue);
+					element.disabled = "disabled";
+				}
+		}
+		var serializedField = document.getElementById("serialized_data");
+		serializedField.value = serial;
+	}
+	return true;
 }
 
 
