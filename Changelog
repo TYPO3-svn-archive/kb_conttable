@@ -1,3 +1,7 @@
+2010-05-05  Bernhard Kraft <kraftb@think-open.at>
+	
+	* Uploaded new version 0.4.0 to TER
+
 2009-12-26  Bernhard Kraft <kraftb@think-open.at>
 
 	* Removed a patch for adding a hook (this was only required in TYPO3 < 3.8.0)
