@@ -1,3 +1,10 @@
+2011-07-13  Bernhard Kraft <kraftb@seicht.co.at>
+	
+	* Fixed bug: At some places the deprecated/removed method "t3lib_div::GPvar" has been used. Changed this occurences to use "t3lib_div::_GP"
+	* Fixed bug: The XCLASSing of "template.php" didn't work anymore because t3lib_div now caches the names of classes instanciated via "t3lib_div::makeInstance"
+	* Updated the copyright date and email address in all files containing a copyright notice
+	* Uploaded new version 0.4.1 to TER
+
 2010-05-05  Bernhard Kraft <kraftb@think-open.at>
 	
 	* Uploaded new version 0.4.0 to TER

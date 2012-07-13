@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2004-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,7 +26,7 @@
  *
  * $Id$
  *
- * @author	Bernhard Kraft <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@seicht.co.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -233,10 +233,10 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 		$this->doc->backPath = $BACK_PATH;
 		$this->doc->form='<form name="editform" id="editform" action="index.php" method="POST" enctype="multipart/form-data" onsubmit="return checkSubmit();">';
 
-  		$this->P = t3lib_div::GPvar('P', 1);
+  		$this->P = t3lib_div::_GP('P', 1);
 		$this->pid = $this->id = $this->P['pid'];
 		$this->uid = $this->P['uid'];
-  		$this->GET = t3lib_div::GPvar('kbconttable', 1);
+  		$this->GET = t3lib_div::_GP('kbconttable', 1);
 		$this->deSerialize_GET();
 
 		$this->clipObj = t3lib_div::makeInstance('t3lib_clipboard');
@@ -272,7 +272,7 @@ class tx_kbconttable_tt_content_tx_kbconttable_flex_dswiz extends t3lib_SCbase	{
 			$this->tceforms->backPath = $this->doc->backPath;
 		}
 			// Clipboard actions are handled:
-		$CB = t3lib_div::GPvar('CB');	// CB is the clipboard command array
+		$CB = t3lib_div::_GP('CB');	// CB is the clipboard command array
 		if ($this->cmd=='setCB')	{
 				// CBH is all the fields selected for the clipboard, CBC is the checkbox fields which were checked. By merging we get a full array of checked/unchecked elements
 				// This is set to the 'el' array of the CB after being parsed so only the table in question is registered.
@@ -470,7 +470,7 @@ TABLE TH.typo3-kbconttable-header-row TABLE TD.bgColor2 { height: 33%; text-alig
 				$this->doc->JScode .= '<!-- // additionalJS_pre end -->';
 			}
 			$this->content.=$this->doc->startPage($LANG->getLL('title'));
-			$headerSection = $this->doc->getHeader('pages',$this->pageinfo,$this->pageinfo['_thePath']).'<br>'.$LANG->sL('LLL:EXT:lang/locallang_core.php:labels.path').': '.t3lib_div::fixed_lgd_pre($this->pageinfo['_thePath'],50);
+			$headerSection = $this->doc->getHeader('pages',$this->pageinfo,$this->pageinfo['_thePath']).'<br>'.$LANG->sL('LLL:EXT:lang/locallang_core.php:labels.path').': '.t3lib_div::fixed_lgd_cs($this->pageinfo['_thePath'],50);
 
 			if (strlen($errror_content))	{
 				$this->content.=$this->doc->section('Main', $error_content, 0, 1);

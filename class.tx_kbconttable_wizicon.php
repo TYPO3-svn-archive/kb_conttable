@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2004-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is

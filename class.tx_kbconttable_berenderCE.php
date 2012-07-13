@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2004-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *  based on code by :
 *  (c) 2003, 2004  Kasper Skårhøj (kasper@typo3.com) / Robert Lemke (robert@typo3.org)
@@ -29,7 +29,7 @@
  *
  * $Id$
  *
- * @author	Bernhard Kraft <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@seicht.co.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -253,7 +253,7 @@ class tx_kbconttable_berenderCE	{
 							'table' => 'tt_content',
 							'id' => $el_row['uid'],
 							'pid' => $el_row['pid'],
-							'title' => t3lib_div::fixed_lgd(t3lib_BEfunc::getRecordTitle('tt_content', $el_row),50),
+							'title' => t3lib_div::fixed_lgd_cs(t3lib_BEfunc::getRecordTitle('tt_content', $el_row),50),
 							'icon' => t3lib_iconWorks::getIcon('tt_content', $el_row),
 							'sys_language_uid' => $el_row['sys_language_uid'],
 							'l18n_parent' => $el_row['l18n_parent'],
@@ -274,7 +274,7 @@ class tx_kbconttable_berenderCE	{
 				'table' => 'pages',
 				'id' => $this->TopPage['uid'],
 				'pid' => $this->TopPage['pid'],
-				'title' => t3lib_div::fixed_lgd(t3lib_BEfunc::getRecordTitle($table, $TopPage),50),
+				'title' => t3lib_div::fixed_lgd_cs(t3lib_BEfunc::getRecordTitle($table, $TopPage),50),
 				'icon' => t3lib_iconWorks::getIcon('page', $TopPage),
 				'sys_language_uid' => $page['sys_language_uid'],
 				'l18n_parent' => $page['l18n_parent'],

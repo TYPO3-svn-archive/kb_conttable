@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2004-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *  Code used from:
 *  (c) 2003, 2004 Kasper Skaarhoj (kasper@typo3.com)
@@ -29,7 +29,7 @@
  *
  * $Id$
  *
- * @author	Bernhard Kraft <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@seicht.co.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]

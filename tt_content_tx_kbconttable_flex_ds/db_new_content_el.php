@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2004-2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2004-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,44 +26,27 @@
  *
  * $Id$
  *
- * @author	Bernhard Kraft <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@seicht.co.at>
  */
 
 
 unset($MCONF);
 require ('conf.php');
 require ($BACK_PATH.'init.php');
+
+// 2012-07-12 | kraftb | Added the following line
+// There was a change in t3lib_div so the names of XCLASSed classes get cached. As "template.php" directly creates an instance of the
+// class defined in it, the class has to be already extended. The switch to execute the new code part is achieved by a global flag.
+$GLOBALS['TYPO3_CONF_VARS']['BE']['XCLASS']['typo3/template.php'] = t3lib_extMgm::extPath('kb_conttable').'tt_content_tx_kbconttable_flex_ds/ux_template.php';
+
 require ($BACK_PATH.'template.php');
-
 require_once(t3lib_extMgm::extPath('kb_conttable').'class.tx_kbconttable_funcs.php');
-
 	// Unset MCONF/MLANG since all we wanted was back path etc. for this particular script.
 unset($MCONF);
 unset($MLANG);
 
-class ux_template extends template {
-	function startPage($title) {
-		$this->id = $_GET['id'];
-		$this->P = $_GET['P'];
-		$this->funcs = t3lib_div::makeInstance('tx_kbconttable_funcs');
-		$this->funcs->init($this);
-		$this->parentRecord = t3lib_div::GPvar('parentRecord');
 
-		$js = '
 
-function goToalt_doc() {
-	document.location.href = \'index.php?'.$this->funcs->linkParams().'&kbconttable[funcs][createNewRecord]='.rawurlencode($this->parentRecord).'\'+document.editForm.defValues.value;
-	return false;
-}
-
-';
-
-// $newRecordLink = 'index.php?'.$this->funcs->linkParams().'&kbconttable[funcs][createNewRecord]='.rawurlencode($this->parentRecord).$wizardItem['params'];
-
-		$this->JScode = $this->wrapScriptTags($js);
-		return parent::startPage($title);
-	}
-}
 
 $scriptFile = t3lib_extMgm::extPath('cms').'layout/db_new_content_el.php';
 $scriptData = t3lib_div::getURL($scriptFile);
@@ -73,6 +56,7 @@ $scriptData = preg_replace('/^require\(\$BACK_PATH\.\'init\.php\'\);\s*$/m', '',
 $scriptData = preg_replace('/^require\(\$BACK_PATH\.\'template\.php\'\);\s*$/m', '', $scriptData);
 
 $_GET['colPos'] = 10;
+$GLOBALS['T3_VARS']['kb_conttable']['altTemplate'] = true;
 
 t3lib_div::writeFile(PATH_site.'typo3temp/kbconttable_db_new_cont_el.php', $scriptData);
 require_once(PATH_site.'typo3temp/kbconttable_db_new_cont_el.php');

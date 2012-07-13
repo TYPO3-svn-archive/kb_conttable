@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2009 Bernhard Kraft (kraftb@think-open.at)
+*  (c) 2009-2012 Bernhard Kraft (kraftb@seicht.co.at)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,7 +26,7 @@
  *
  * $Id$
  *
- * @author	Bernhard Kraft <kraftb@think-open.at>
+ * @author	Bernhard Kraft <kraftb@seicht.co.at>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
