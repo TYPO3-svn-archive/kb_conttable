@@ -4,6 +4,7 @@
 	* Fixed bug: The XCLASSing of "template.php" didn't work anymore because t3lib_div now caches the names of classes instanciated via "t3lib_div::makeInstance"
 	* Updated the copyright date and email address in all files containing a copyright notice
 	* Uploaded new version 0.4.1 to TER
+	* Updated documentation
 
 2010-05-05  Bernhard Kraft <kraftb@think-open.at>
 	
